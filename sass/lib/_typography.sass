@@ -1,0 +1,66 @@
+/*
+ * orignal file - sass/lib/_typography.sass
+ *
+ * # Table of Contents
+ *   1. Fonts
+ *   2. Global declaration
+ *   3. Elements
+ */
+
+
+/* 1. Fonts
+ *    ----- */
+// list format = <base filename> <font-family> <class-name>
+$komika: KomikaTitle-Paint-webfont KomikaTitle-PaintRegular komika
+$opensans: OpenSans-Semibold-webfont OpenSansSemibold opensans
+$digitaldream: DIGITALDREAMFAT-webfont DigitaldreamFatRegular digitaldream
+
+/* @font-face declarations */
+@each $font in $komika $opensans $digitaldream
+
+  $basename: nth($font, 1)
+  $family: nth($font, 2)
+  $class: nth($font, 3)
+
+  @font-face
+    font-family: quote($family)
+    src: font-url('#{$basename}.eot')
+    src: font-files('#{$basename}.eot?#iefix', embedded-opentype, '#{$basename}.woff', woff, '#{$basename}.ttf', truetype, '#{$basename}.svg#DigitaldreamFatRegular', svg)
+    font-weight: normal
+    font-style: normal
+  .#{$class}
+    font-family: #{$family}, Helvetica, Arial, "Nimbus Sans L", sans-serif
+
+
+/* 2. Global declaration
+ *    ------------------ */
+$base-font-size: 14px
+$base-line-height: 24px
++establish-baseline
+
+body,
+button,
+input,
+select,
+textarea
+  @extend .komika
+
+
+/* 3. Elements
+ *    -------- */
+p,
+ul,
+ol,
+figure
+  margin-bottom: $base-line-height
+
+h1
+  +adjust-font-size-to(52px, 2)
+  color: $orange
+  text-shadow: 2px 3px 0 #f2f2f2
+
+h2
+section h1
+  +adjust-font-size-to(40px)
+  color: #fefefe
+  text-shadow: 2px 4px 0 rgba(#000, 0.2)

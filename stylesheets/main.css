@@ -1,0 +1,94 @@
+/* orignal file - sass/lib/_global.sass
+ *
+ * # Table of Contents
+ *   1. Color scheme
+ *   2. Helper classes
+ *   3. Sprites
+ */
+/* 1. Color scheme
+ *    ------------ */
+/* 2. Helper classes
+ *    -------------- */
+/* Hide from screenreaders */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* The ever-great float-containing class */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* 3. Sprites
+ *    ------- */
+.sprite-sprite, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .sprite-wheel, .sprite-wringer {
+  background: url('../images/sprite-s84afc97f78.png') no-repeat;
+}
+
+.sprite-hatch {
+  background-position: 0 0;
+  height: 161px;
+  width: 126px;
+}
+
+.sprite-nose {
+  background-position: 0 -161px;
+  height: 161px;
+  width: 163px;
+}
+
+.sprite-slide {
+  background-position: 0 -322px;
+  height: 168px;
+  width: 118px;
+}
+
+.sprite-slime-small {
+  background-position: 0 -490px;
+  height: 155px;
+  width: 177px;
+}
+
+.sprite-slime {
+  background-position: 0 -645px;
+  height: 206px;
+  width: 236px;
+}
+
+.sprite-tank {
+  background-position: 0 -851px;
+  height: 152px;
+  width: 171px;
+}
+
+.sprite-timer {
+  background-position: 0 -1003px;
+  height: 329px;
+  width: 386px;
+}
+
+.sprite-wheel {
+  background-position: 0 -1332px;
+  height: 164px;
+  width: 166px;
+}
+
+.sprite-wringer {
+  background-position: 0 -1496px;
+  height: 160px;
+  width: 164px;
+}

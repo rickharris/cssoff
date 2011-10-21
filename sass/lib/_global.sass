@@ -1,0 +1,48 @@
+/*
+ * orignal file - sass/lib/_global.sass
+ *
+ * # Table of Contents
+ *   1. Color scheme
+ *   2. Helper classes
+ *   3. Sprites
+ */
+
+
+/* 1. Color scheme
+ *    ------------ */
+$blue: #80c1d6
+$dark-blue: #0f2830
+$orange: #fe6638
+$green: #80b238
+
+
+/* 2. Helper classes
+ *    -------------- */
+/* Hide from screenreaders */
+.visuallyhidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+
+/* The ever-great float-containing class */
+.clearfix
+  *zoom: 1
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+
+/* 3. Sprites
+ *    ------- */
+// turn on sprite dimensions
+$sprite-sprite-dimensions: true !default
+@import "sprite/*.png"
++all-sprite-sprites

@@ -2,13 +2,13 @@
  *
  * # Table of Contents
  *   1. Color scheme
- *   2. Helper classes
+ *   2. Helper classes and mixins
  *   3. Sprites
  */
 /* 1. Color scheme
  *    ------------ */
-/* 2. Helper classes
- *    -------------- */
+/* 2. Helper classes and mixins
+ *    ------------------------- */
 /* Hide from screenreaders */
 .visuallyhidden {
   border: 0;
@@ -22,73 +22,80 @@
 }
 
 /* The ever-great float-containing class */
-.clearfix {
+.clearfix, .row {
   *zoom: 1;
 }
-.clearfix:before, .clearfix:after {
+.clearfix:before, .row:before, .clearfix:after, .row:after {
   content: "";
   display: table;
 }
-.clearfix:after {
+.clearfix:after, .row:after {
   clear: both;
 }
 
+/* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .sprite-wheel, .sprite-wringer {
-  background: url('../images/sprite-s84afc97f78.png') no-repeat;
+.sprite-sprite, .sprite-arrow, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .sprite-wheel, .sprite-wringer {
+  background: url('../images/sprite-s0d7937eb7e.png') no-repeat;
+}
+
+.sprite-arrow {
+  background-position: 0 0;
+  height: 15px;
+  width: 27px;
 }
 
 .sprite-hatch {
-  background-position: 0 0;
+  background-position: 0 -15px;
   height: 161px;
   width: 126px;
 }
 
 .sprite-nose {
-  background-position: 0 -161px;
+  background-position: 0 -176px;
   height: 161px;
   width: 163px;
 }
 
 .sprite-slide {
-  background-position: 0 -322px;
+  background-position: 0 -337px;
   height: 168px;
   width: 118px;
 }
 
 .sprite-slime-small {
-  background-position: 0 -490px;
+  background-position: 0 -505px;
   height: 155px;
   width: 177px;
 }
 
 .sprite-slime {
-  background-position: 0 -645px;
+  background-position: 0 -660px;
   height: 206px;
   width: 236px;
 }
 
 .sprite-tank {
-  background-position: 0 -851px;
+  background-position: 0 -866px;
   height: 152px;
   width: 171px;
 }
 
 .sprite-timer {
-  background-position: 0 -1003px;
+  background-position: 0 -1018px;
   height: 329px;
   width: 386px;
 }
 
 .sprite-wheel {
-  background-position: 0 -1332px;
+  background-position: 0 -1347px;
   height: 164px;
   width: 166px;
 }
 
 .sprite-wringer {
-  background-position: 0 -1496px;
+  background-position: 0 -1511px;
   height: 160px;
   width: 164px;
 }
@@ -185,4 +192,30 @@ section h1 {
   line-height: 1.2em;
   color: #fefefe;
   text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* orignal file - sass/lib/_grid.sass
+ *
+ * # Table of Contents
+ *   1. Configuration
+ *   2. Container
+ *   3. Column row
+ *   4. Column Classes
+ */
+.container {
+  margin: 0 5%;
+}
+
+.row {
+  margin-left: -24px;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  padding-left: 24px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }

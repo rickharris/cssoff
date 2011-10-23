@@ -3,7 +3,7 @@
  *
  * # Table of Contents
  *   1. Color scheme
- *   2. Helper classes
+ *   2. Helper classes and mixins
  *   3. Sprites
  */
 
@@ -17,8 +17,8 @@ $green: #80b238
 $fg: #fff
 
 
-/* 2. Helper classes
- *    -------------- */
+/* 2. Helper classes and mixins
+ *    ------------------------- */
 /* Hide from screenreaders */
 .visuallyhidden
   border: 0
@@ -39,6 +39,17 @@ $fg: #fff
     display: table
   &:after
     clear: both
+
+/* Easy media query mixin */
+=respond-to($media)
+  @if $media == wide-handhelds
+    @media only screen and min-width: 480px)
+      @content
+  @else if $media == tablets
+    @media only screen and (min-width: 768px)
+      @content
+  @else if $media == desktops
+    @media only screen and (min-width: 960px)
 
 
 /* 3. Sprites

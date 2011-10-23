@@ -1,0 +1,49 @@
+/*
+ * orignal file - sass/lib/_grid.sass
+ *
+ * # Table of Contents
+ *   1. Configuration
+ *   2. Container
+ *   3. Column row
+ *   4. Column Classes
+ */
+
+// 1. Configuration
+      -------------
+$num-columns: 12
+$gutter-width: $base-line-height
+
+
+// 2. Container
+      ---------
+.container
+  margin: 0 5%
+  +respond-to(desktop)
+    max-width: 940px
+    margin: 0 auto
+
+
+// 3. Column row
+      ----------
+.row
+  @extend .clearfix
+  margin-left: -$gutter-width
+
+
+// 4. Column classes
+      --------------
+// By default, all columns are the full width of the container. This is to
+// safeguard against crazy things happening in mobile when the column class is
+// extended inside of a media query.
+.column
+  float: left
+  width: 100%
+  padding-left: $gutter-width
+  +box-sizing(border-box)
+
+// The selector extending the column class can safely override the width, even
+// inside of a media query, using the column-width mixin
+@mixin column-width($n)
+  // We subtract a minute percentage so that IE7 doesn't stupidly wrap things
+  // that shouldn't be wrapped
+  width: ((100 / $num-columns) * $n) - 0.01%

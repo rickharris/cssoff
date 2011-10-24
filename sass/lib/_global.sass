@@ -61,6 +61,16 @@
     @media only screen and (min-width: 960px)
       @content
 
+// Easy text selection colors
+=selection($bg, $fg: "", $selector: "")
+  @each $selection in -moz-selection, selection
+    #{$selector}::#{$selection}
+      background: $bg
+      @if $fg != ""
+        color: $fg
+        text-shadow: none
+
+
 /* 3. Sprites
  *    ------- */
 // turn on sprite dimensions

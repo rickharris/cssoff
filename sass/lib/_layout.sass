@@ -1,0 +1,56 @@
+/*
+ * orignal file - sass/lib/_layout.sass
+ *
+ * # Table of Contents
+ *   1. Global layout definitions
+ *   2. Header
+ *   3. Obstacles
+ *   4. Prizes
+ *   5. Signup
+ *   6. Footer
+ */
+
+
+/* 1. Global layout definitions */
+html
+  +background-pattern(blue)
+
++selection(color-palette(blue), color-palette(white))
+
+
+/* 2. Header
+ *    ------ */
+.page-header-inner
+  @extend .container
+  text-align: center
+  padding-top: $base-line-height
+  h2
+    @extend h1
+  p
+    @extend .opensans
+    small
+      font-size: 14px
+  nav
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    background: rgba(color-palette(dark-blue), 0.2)
+    text-transform: uppercase
+    +adjust-font-size-to(14px, 1.333)
+    @extend .opensans
+    h2
+      @extend .visuallyhidden
+    ul
+      padding-left: 0
+      margin-bottom: 0
+    li
+      display: inline
+      padding: 0 $gutter-width/2
+      &:last-child
+        display: none
+    a
+      color: color-palette(white)
+      text-decoration: none
+      &:hover
+        color: lighten(color-palette(blue), 15%)

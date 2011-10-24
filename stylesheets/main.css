@@ -10,7 +10,7 @@
 /* 2. Helper classes and mixins
  *    ------------------------- */
 /* Hide from screenreaders */
-.visuallyhidden, .form-select label {
+.visuallyhidden, .form-select label, .page-header-inner nav h2 {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -134,7 +134,7 @@ textarea {
   font-style: normal;
 }
 
-.opensans {
+.opensans, .page-header-inner p, .page-header-inner nav {
   font-family: OpenSansSemibold, Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
@@ -169,10 +169,6 @@ textarea {
   color: white;
 }
 
-body {
-  background: #80c1d6;
-}
-
 /* 3. Elements
  *    -------- */
 p,
@@ -183,19 +179,34 @@ figure {
   margin-bottom: 16px;
 }
 
-h1 {
-  font-size: 3.714em;
-  line-height: 0.923em;
+img {
+  max-width: 100%;
+}
+
+h1, .page-header-inner h2 {
+  font-size: 2.143em;
+  line-height: 1.6em;
+  text-shadow: 1px 2px 0 #f2f2f2;
   color: #fe6638;
-  text-shadow: 2px 3px 0 #f2f2f2;
+  margin: 24px 0;
+}
+@media only screen and (min-width: 960px) {
+  h1, .page-header-inner h2 {
+    font-size: 3.714em;
+    line-height: 0.923em;
+    text-shadow: 2px 3px 0 #f2f2f2;
+  }
 }
 
 h2,
-section h1 {
+section h1,
+section .page-header-inner h2, .page-header-inner
+section h2 {
   font-size: 2.857em;
   line-height: 1.2em;
   color: #fefefe;
   text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 0 24px;
 }
 
 /* orignal file - sass/lib/_grid.sass
@@ -210,11 +221,11 @@ section h1 {
  *    ------------- */
 /* 2. Container
  *    --------- */
-.container {
+.container, .page-header-inner {
   margin: 0 5%;
 }
 @media only screen and (min-width: 960px) {
-  .container {
+  .container, .page-header-inner {
     max-width: 940px;
     margin: 0 auto;
   }
@@ -395,4 +406,69 @@ button:hover, button:focus {
 button:active {
   top: 2px;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* orignal file - sass/lib/_layout.sass
+ *
+ * # Table of Contents
+ *   1. Global layout definitions
+ *   2. Header
+ *   3. Obstacles
+ *   4. Prizes
+ *   5. Signup
+ *   6. Footer
+ */
+/* 1. Global layout definitions */
+html {
+  background: #80c1d6 url('../images/patterns/blue.png?1319166896') repeat 0 0;
+}
+
+::-moz-selection {
+  background: #80c1d6;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: #80c1d6;
+  color: white;
+  text-shadow: none;
+}
+
+/* 2. Header
+ *    ------ */
+.page-header-inner {
+  text-align: center;
+  padding-top: 24px;
+}
+.page-header-inner p small {
+  font-size: 14px;
+}
+.page-header-inner nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 40, 48, 0.2);
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 2.285em;
+}
+.page-header-inner nav ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.page-header-inner nav li {
+  display: inline;
+  padding: 0 10px;
+}
+.page-header-inner nav li:last-child {
+  display: none;
+}
+.page-header-inner nav a {
+  color: white;
+  text-decoration: none;
+}
+.page-header-inner nav a:hover {
+  color: #badde9;
 }

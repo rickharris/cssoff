@@ -10,7 +10,7 @@
 /* 2. Helper classes and mixins
  *    ------------------------- */
 /* Hide from screenreaders */
-.visuallyhidden {
+.visuallyhidden, .form-select label {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -36,11 +36,11 @@
 /* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-arrow, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .sprite-wheel, .sprite-wringer {
+.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .sprite-wheel, .sprite-wringer {
   background: url('../images/sprite-s0d7937eb7e.png') no-repeat;
 }
 
-.sprite-arrow {
+.sprite-arrow, .selector span:after {
   background-position: 0 0;
   height: 15px;
   width: 27px;
@@ -167,6 +167,9 @@ input,
 select,
 textarea {
   color: white;
+}
+
+body {
   background: #80c1d6;
 }
 
@@ -176,7 +179,8 @@ p,
 ul,
 ol,
 figure {
-  margin-bottom: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
 h1 {
@@ -218,4 +222,163 @@ section h1 {
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* orignal file - sass/lib/_forms.sass
+ * # Table of Contents
+ *   1. Global
+ *   2. Text inputs
+ *   3. Select inputs
+ *   4. Buttons
+ */
+/* 1. Global
+ *    ------ */
+select,
+label {
+  display: block;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* 2. Text inputs
+ *    ----------- */
+input[type=text], .selector, input[type=email], input[type=url] {
+  outline: 0;
+  border: 0;
+  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  padding: 0 16px;
+}
+input[type=text]:focus, .selector:focus, input[type=text].focus, .focus.selector, input[type=email]:focus, input[type=email].focus, input[type=url]:focus, input[type=url].focus {
+  -moz-box-shadow: 0 0 6px #cde7ef;
+  -webkit-box-shadow: 0 0 6px #cde7ef;
+  -o-box-shadow: 0 0 6px #cde7ef;
+  box-shadow: 0 0 6px #cde7ef;
+}
+input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=text].focus.no-boxshadow, .focus.no-boxshadow.selector, input[type=email]:focus.no-boxshadow, input[type=email].focus.no-boxshadow, input[type=url]:focus.no-boxshadow, input[type=url].focus.no-boxshadow {
+  outline: 1px solid #cde7ef;
+}
+
+.js .form-text {
+  position: relative;
+}
+.js .form-text label {
+  position: absolute;
+  top: 13px;
+  left: 16px;
+}
+
+/* 3. Select inputs
+ *    ------------- */
+.selector {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  position: relative;
+  padding: 0;
+}
+.selector {
+  *display: inline;
+}
+.selector.focus {
+  -moz-box-shadow: 0 0 6px #cde7ef;
+  -webkit-box-shadow: 0 0 6px #cde7ef;
+  -o-box-shadow: 0 0 6px #cde7ef;
+  box-shadow: 0 0 6px #cde7ef;
+}
+.selector:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+.selector span {
+  display: block;
+  padding: 13px 16px;
+  cursor: pointer;
+}
+.selector span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 11px;
+}
+.selector select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+
+/* 4. Buttons
+ *    ------- */
+.form-submit {
+  background: url('../images/slime-button-bg.png?1319398760') no-repeat 50% 50%;
+  text-align: center;
+}
+
+button {
+  margin: 0;
+  padding: 0 10px;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: 26px;
+  text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
+  min-width: 177px;
+  min-height: 155px;
+  position: relative;
+  -moz-transform: rotate(-9deg);
+  -webkit-transform: rotate(-9deg);
+  -o-transform: rotate(-9deg);
+  -ms-transform: rotate(-9deg);
+  transform: rotate(-9deg);
+  letter-spacing: 2px;
+  font-style: italic;
+  -moz-transition: color 0.15s;
+  -webkit-transition: color 0.15s;
+  -o-transition: color 0.15s;
+  transition: color 0.15s;
+}
+button:hover, button:focus {
+  color: #badde9;
+}
+button:active {
+  top: 2px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }

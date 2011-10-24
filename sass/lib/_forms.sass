@@ -1,0 +1,120 @@
+/*
+ * orignal file - sass/lib/_forms.sass
+ * # Table of Contents
+ *   1. Global
+ *   2. Text inputs
+ *   3. Select inputs
+ *   4. Buttons
+ */
+
+
+/* 1. Global
+ *    ------ */
+$text-inputs: "input[type=text], input[type=email], input[type=url]"
+
+#{$text-inputs}
+select,
+label
+  display: block
+  +appearance(none)
+
+/* 2. Text inputs
+ *    ----------- */
+#{$text-inputs}
+  outline: 0
+  border: 0
+  +background-pattern(orange)
+  +border-radius(4px)
+  +box-sizing(border-box)
+  width: 100%
+  max-width: 400px
+  height: 50px
+  padding: 0 16px
+  &:focus,
+  &.focus
+    +box-shadow(0 0 6px lighten(color-palette(blue), 20%))
+    &.no-boxshadow
+      outline: 1px solid lighten(color-palette(blue), 20%)
+
+.js .form-text
+  position: relative
+  label
+    position: absolute
+    top: 13px
+    left: 16px
+  
+
+/* 3. Select inputs
+ *    ------------- */
+.selector
+  @extend input[type=text]
+  +inline-block
+  position: relative
+  padding: 0
+  &.focus
+    +box-shadow(0 0 6px lighten(color-palette(blue), 20%))
+  &:after
+    content: ""
+    position: absolute
+    z-index: 1
+    right: 0
+    top: 0
+    width: 50px
+    height: 50px
+    +background-pattern(green)
+    +border-radius(4px)
+  span
+    display: block
+    padding: ((50px - $base-line-height) / 2) 16px
+    cursor: pointer
+    &:after
+      content: ""
+      display: block
+      @extend .sprite-arrow
+      position: absolute
+      z-index: 2
+      top: 18px
+      right: 11px
+  select
+    +appearance(none)
+    margin: 0
+    padding: 0
+    border: 0
+    position: absolute
+    z-index: 3
+    top: 0
+    left: 0
+    height: 50px
+    width: 100%
+
+.form-select label
+  @extend .visuallyhidden
+
+
+/* 4. Buttons
+ *    ------- */
+.form-submit
+  background: image-url("slime-button-bg.png") no-repeat 50% 50%
+  text-align: center
+
+button
+  margin: 0
+  padding: 0 10px
+  border: 0
+  outline: 0
+  background: none
+  font-size: 26px
+  text-shadow: 2px 4px 0 rgba(#000, 0.2)
+  min-width: 177px
+  min-height: 155px
+  position: relative
+  +transform(rotate(-9deg))
+  letter-spacing: 2px
+  font-style: italic
+  +transition(color 0.15s)
+  &:hover,
+  &:focus
+    color: lighten(color-palette(blue), 15%)
+  &:active
+    top: 2px
+    text-shadow: 2px 2px 0 rgba(#000, 0.2)

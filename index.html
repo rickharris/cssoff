@@ -134,25 +134,28 @@
       <section id="be-a-contestant">
         <h2>Be a Contestant</h2>
         <form action="" method="POST">
-          <p>
+          <p class="form-text">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="signup[name]"/>
           </p>
-          <p>
+          <p class="form-text">
             <label for="email">Email Address</label>
             <input type="email" id="email" name="signup[email]"/>
           </p>
-          <p>
+          <p class="form-text">
             <label for="team-name">Team Name</label>
             <input type="text" id="team-name" name="signup[team_name]"/>
           </p>
-          <p>
+          <p class="form-select">
             <label for="team-color">Team Color</label>
             <select id="team-color" name="signup[team_color]">
-              <option>Team Color</option>
+              <option value="">Team Color</option>
+              <option value="blue">Blue</option>
+              <option value="orange">Orange</option>
+              <option value="green">Green</option>
             </select>
           </p>
-          <p>
+          <p class="form-select">
             <label for="gender">Gender</label>
             <select id="gender" name="signup[gender]">
               <option value="">Gender</option>
@@ -160,7 +163,11 @@
               <option value="female">Female</option>
             </select>
           </p>
-          <p>
+          <p class="form-text">
+            <label for="photo">Profile Photo URL</label>
+            <input type="url" id="photo" name="signup[photo]"/>
+          </p>
+          <p class="form-submit">
             <button type="submit">Submit Entry!</button>
           </p>
         </form>
@@ -204,5 +211,9 @@
         </div>
       </footer>
     </div>
+    <script src="vendor/jquery-1.6.4.min.js"></script>
+    <script src="vendor/jquery.uniform.min.js"></script>
+    <script src="vendor/jquery.infieldlabel.min.js"></script>
+    <script src="js/application.js"></script>
   </body>
 </html>

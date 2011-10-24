@@ -5,39 +5,36 @@
  *   1. Configuration
  *   2. Container
  *   3. Column row
- *   4. Column Classes
+ *   4. Column
  */
 
-// 1. Configuration
-      -------------
+/* 1. Configuration
+ *    ------------- */
 $num-columns: 12
-$gutter-width: $base-line-height
+$gutter-width: 20px
 
 
-// 2. Container
-      ---------
+/* 2. Container
+ *    --------- */
 .container
   margin: 0 5%
-  +respond-to(desktop)
+  +respond-to(desktops)
     max-width: 940px
     margin: 0 auto
 
 
-// 3. Column row
-      ----------
+/* 3. Column row
+ *    ---------- */
 .row
   @extend .clearfix
   margin-left: -$gutter-width
 
 
-// 4. Column classes
-      --------------
-// By default, all columns are the full width of the container. This is to
-// safeguard against crazy things happening in mobile when the column class is
-// extended inside of a media query.
+/* 4. Column
+ *    ------ */
 .column
   float: left
-  width: 100%
+  width: 100% /* Default for mobile, should be overridden inside media query */
   padding-left: $gutter-width
   +box-sizing(border-box)
 

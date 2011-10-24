@@ -204,20 +204,34 @@ section h1 {
  *   1. Configuration
  *   2. Container
  *   3. Column row
- *   4. Column Classes
+ *   4. Column
  */
+/* 1. Configuration
+ *    ------------- */
+/* 2. Container
+ *    --------- */
 .container {
   margin: 0 5%;
 }
-
-.row {
-  margin-left: -24px;
+@media only screen and (min-width: 960px) {
+  .container {
+    max-width: 940px;
+    margin: 0 auto;
+  }
 }
 
+/* 3. Column row
+ *    ---------- */
+.row {
+  margin-left: -20px;
+}
+
+/* 4. Column
+ *    ------ */
 .column {
   float: left;
   width: 100%;
-  padding-left: 24px;
+  padding-left: 20px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;

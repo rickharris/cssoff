@@ -44,9 +44,10 @@ input,
 select,
 textarea
   @extend .komika
-  color: $fg
-  background: $blue /* temporary, so you can actually see the text until the layout styles are complete */
+  color: color-palette(white)
 
+body
+  background: color-palette(blue) /* temporary, so you can actually see the text until the layout styles are complete */
 
 /* 3. Elements
  *    -------- */
@@ -54,11 +55,12 @@ p,
 ul,
 ol,
 figure
-  margin-bottom: $base-line-height
+  margin-top: 0
+  margin-bottom: 16px
 
 h1
   +adjust-font-size-to(52px, 2)
-  color: $orange
+  color: color-palette(orange)
   text-shadow: 2px 3px 0 #f2f2f2
 
 h2,

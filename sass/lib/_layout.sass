@@ -70,20 +70,22 @@ html
     color: rgba(#000, 0.06)
   padding: 36px 0
   h2
-    float: left
-    padding-right: 23px
-    position: relative
     margin-bottom: 48px
-    &:after
-      content: ""
-      width: 940px
-      height: 48px
-      background: image-url("patterns/yellow-checker.png") repeat-x 0 7px
-      position: absolute
-      top: 0
-      left: 100%
-    + *
-      clear: left
+  +respond-to(tablets)
+    h2
+      float: left
+      padding-right: 23px
+      position: relative
+      &:after
+        content: ""
+        width: 940px
+        height: 48px
+        background: image-url("patterns/yellow-checker.png") repeat-x 0 7px
+        position: absolute
+        top: 0
+        left: 100%
+      + *
+        clear: left
 
 
 /* 4. Obstacles
@@ -93,8 +95,6 @@ html
   header,
   .content
     @extend .container
-  header
-    overflow: hidden
   nav
     display: none
     h2
@@ -126,9 +126,30 @@ html
   +background-pattern(green)
   section
     @extend .container
-    overflow: hidden
   ul
     list-style: none none
     padding-left: 0
   li
     @extend .obstacle
+
+/* 6. Signup
+ *    ------ */
+#be-a-contestant
+  @extend .container
+  form
+    margin-bottom: 24px
+
+.the-clock
+  text-align: center
+  .clock
+    @extend .sprite-timer
+    @extend .digitaldream
+    font-size: 140px
+    line-height: 330px
+    color: #f5eb00
+    text-shadow: 5px 10px 0 #000
+    margin: 0 -4% 48px
+  p
+    @extend h2
+    max-width: 250px
+    margin: 0 auto

@@ -10,7 +10,7 @@
 /* 2. Helper classes and mixins
  *    ------------------------- */
 /* Hide from screenreaders */
-.visuallyhidden, .form-select label, .page-header-inner nav h2, #obstacles nav h2 {
+.visuallyhidden, .form-select label, .page-header-inner nav h2, .page-header-inner nav .the-clock p, .the-clock .page-header-inner nav p, #obstacles nav h2, #obstacles nav .the-clock p, .the-clock #obstacles nav p {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -23,24 +23,24 @@
 
 /* The ever-great float-containing class */
 .clearfix, .container, .page-header-inner, #obstacles header,
-#obstacles .content, #prizes section, .row {
+#obstacles .content, #prizes section, #be-a-contestant, .row {
   *zoom: 1;
 }
 .clearfix:before, .container:before, .page-header-inner:before, #obstacles header:before,
-#obstacles .content:before, #prizes section:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, #prizes section:after, .row:after {
+#obstacles .content:before, #prizes section:before, #be-a-contestant:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
+#obstacles .content:after, #prizes section:after, #be-a-contestant:after, .row:after {
   content: "";
   display: table;
 }
 .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, #prizes section:after, .row:after {
+#obstacles .content:after, #prizes section:after, #be-a-contestant:after, .row:after {
   clear: both;
 }
 
 /* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .sprite-wheel, .sprite-wringer {
+.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .the-clock .clock, .sprite-wheel, .sprite-wringer {
   background: url('../images/sprite-s0d7937eb7e.png') no-repeat;
 }
 
@@ -86,7 +86,7 @@
   width: 171px;
 }
 
-.sprite-timer {
+.sprite-timer, .the-clock .clock {
   background-position: 0 -1018px;
   height: 329px;
   width: 386px;
@@ -150,7 +150,7 @@ textarea {
   font-style: normal;
 }
 
-.digitaldream {
+.digitaldream, .the-clock .clock {
   font-family: DigitaldreamFatRegular, Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
@@ -187,7 +187,7 @@ img {
   max-width: 100%;
 }
 
-h1, .page-header-inner h2 {
+h1, .page-header-inner h2, .page-header-inner .the-clock p, .the-clock .page-header-inner p {
   font-size: 2.143em;
   line-height: 1.6em;
   text-shadow: 1px 2px 0 #f2f2f2;
@@ -196,17 +196,21 @@ h1, .page-header-inner h2 {
   font-weight: normal;
 }
 @media only screen and (min-width: 960px) {
-  h1, .page-header-inner h2 {
+  h1, .page-header-inner h2, .page-header-inner .the-clock p, .the-clock .page-header-inner p {
     font-size: 3.714em;
     line-height: 0.923em;
     text-shadow: 2px 3px 0 #f2f2f2;
   }
 }
 
-h2,
+h2, .the-clock p,
 section h1,
 section .page-header-inner h2, .page-header-inner
-section h2 {
+section h2,
+section .page-header-inner .the-clock p, .page-header-inner .the-clock
+section p,
+section .the-clock .page-header-inner p, .the-clock .page-header-inner
+section p {
   font-size: 2.857em;
   line-height: 1.2em;
   color: #fefefe;
@@ -232,12 +236,12 @@ h3 {
 /* 2. Container
  *    --------- */
 .container, .page-header-inner, #obstacles header,
-#obstacles .content, #prizes section {
+#obstacles .content, #prizes section, #be-a-contestant {
   margin: 0 5%;
 }
 @media only screen and (min-width: 960px) {
   .container, .page-header-inner, #obstacles header,
-  #obstacles .content, #prizes section {
+  #obstacles .content, #prizes section, #be-a-contestant {
     max-width: 940px;
     margin: 0 auto;
   }
@@ -500,38 +504,57 @@ html {
   border-color: rgba(0, 0, 0, 0.06);
   padding: 36px 0;
 }
-#obstacles h2,
+#obstacles h2, #obstacles .the-clock p, .the-clock #obstacles p,
 #prizes h2,
-.footer-wrapper h2 {
-  float: left;
-  padding-right: 23px;
-  position: relative;
+#prizes .the-clock p, .the-clock
+#prizes p,
+.footer-wrapper h2,
+.footer-wrapper .the-clock p, .the-clock
+.footer-wrapper p {
   margin-bottom: 48px;
 }
-#obstacles h2:after,
-#prizes h2:after,
-.footer-wrapper h2:after {
-  content: "";
-  width: 940px;
-  height: 48px;
-  background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 7px;
-  position: absolute;
-  top: 0;
-  left: 100%;
-}
-#obstacles h2 + *,
-#prizes h2 + *,
-.footer-wrapper h2 + * {
-  clear: left;
+@media only screen and (min-width: 768px) {
+  #obstacles h2, #obstacles .the-clock p, .the-clock #obstacles p,
+  #prizes h2,
+  #prizes .the-clock p, .the-clock
+  #prizes p,
+  .footer-wrapper h2,
+  .footer-wrapper .the-clock p, .the-clock
+  .footer-wrapper p {
+    float: left;
+    padding-right: 23px;
+    position: relative;
+  }
+  #obstacles h2:after, #obstacles .the-clock p:after, .the-clock #obstacles p:after,
+  #prizes h2:after,
+  #prizes .the-clock p:after, .the-clock
+  #prizes p:after,
+  .footer-wrapper h2:after,
+  .footer-wrapper .the-clock p:after, .the-clock
+  .footer-wrapper p:after {
+    content: "";
+    width: 940px;
+    height: 48px;
+    background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 7px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+  #obstacles h2 + *, #obstacles .the-clock p + *, .the-clock #obstacles p + *,
+  #prizes h2 + *,
+  #prizes .the-clock p + *, .the-clock
+  #prizes p + *,
+  .footer-wrapper h2 + *,
+  .footer-wrapper .the-clock p + *, .the-clock
+  .footer-wrapper p + * {
+    clear: left;
+  }
 }
 
 /* 4. Obstacles
  *    --------- */
 #obstacles {
   background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
-}
-#obstacles header {
-  overflow: hidden;
 }
 #obstacles nav {
   display: none;
@@ -571,10 +594,28 @@ html {
 #prizes {
   background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
 }
-#prizes section {
-  overflow: hidden;
-}
 #prizes ul {
   list-style: none none;
   padding-left: 0;
+}
+
+/* 6. Signup
+ *    ------ */
+#be-a-contestant form {
+  margin-bottom: 24px;
+}
+
+.the-clock {
+  text-align: center;
+}
+.the-clock .clock {
+  font-size: 140px;
+  line-height: 330px;
+  color: #f5eb00;
+  text-shadow: 5px 10px 0 black;
+  margin: 0 -4% 48px;
+}
+.the-clock p {
+  max-width: 250px;
+  margin: 0 auto;
 }

@@ -10,7 +10,7 @@
 /* 2. Helper classes and mixins
  *    ------------------------- */
 /* Hide from screenreaders */
-.visuallyhidden, .form-select label, .page-header-inner nav h2 {
+.visuallyhidden, .form-select label, .page-header-inner nav h2, #obstacles nav h2 {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -22,14 +22,18 @@
 }
 
 /* The ever-great float-containing class */
-.clearfix, .row {
+.clearfix, .container, .page-header-inner, #obstacles header,
+#obstacles .content, .row {
   *zoom: 1;
 }
-.clearfix:before, .row:before, .clearfix:after, .row:after {
+.clearfix:before, .container:before, .page-header-inner:before, #obstacles header:before,
+#obstacles .content:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
+#obstacles .content:after, .row:after {
   content: "";
   display: table;
 }
-.clearfix:after, .row:after {
+.clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
+#obstacles .content:after, .row:after {
   clear: both;
 }
 
@@ -221,11 +225,13 @@ section h2 {
  *    ------------- */
 /* 2. Container
  *    --------- */
-.container, .page-header-inner {
+.container, .page-header-inner, #obstacles header,
+#obstacles .content {
   margin: 0 5%;
 }
 @media only screen and (min-width: 960px) {
-  .container, .page-header-inner {
+  .container, .page-header-inner, #obstacles header,
+  #obstacles .content {
     max-width: 940px;
     margin: 0 auto;
   }
@@ -413,10 +419,11 @@ button:active {
  * # Table of Contents
  *   1. Global layout definitions
  *   2. Header
- *   3. Obstacles
- *   4. Prizes
- *   5. Signup
- *   6. Footer
+ *   3. Content
+ *   4. Obstacles
+ *   5. Prizes
+ *   6. Signup
+ *   7. Footer
  */
 /* 1. Global layout definitions */
 html {
@@ -424,13 +431,13 @@ html {
 }
 
 ::-moz-selection {
-  background: #80c1d6;
+  background: rgba(0, 0, 0, 0.25);
   color: white;
   text-shadow: none;
 }
 
 ::selection {
-  background: #80c1d6;
+  background: rgba(0, 0, 0, 0.25);
   color: white;
   text-shadow: none;
 }
@@ -440,6 +447,10 @@ html {
 .page-header-inner {
   text-align: center;
   padding-top: 24px;
+  padding-bottom: 48px;
+}
+.page-header-inner p {
+  margin-bottom: 0;
 }
 .page-header-inner p small {
   font-size: 14px;
@@ -471,4 +482,68 @@ html {
 }
 .page-header-inner nav a:hover {
   color: #badde9;
+}
+
+/* 3. Content
+ * ------- */
+section {
+  border-width: 7px 0;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.06);
+  padding: 36px 0;
+  overflow: hidden;
+}
+section h1, section .page-header-inner h2, .page-header-inner section h2 {
+  float: left;
+  padding-right: 23px;
+  position: relative;
+}
+section h1:after, section .page-header-inner h2:after, .page-header-inner section h2:after {
+  content: "";
+  width: 940px;
+  height: 48px;
+  background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 7px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+section h1 + *, section .page-header-inner h2 + *, .page-header-inner section h2 + * {
+  clear: left;
+}
+
+/* 4. Obstacles
+ *    --------- */
+#obstacles {
+  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+}
+#obstacles nav {
+  display: none;
+}
+#obstacles .obstacle {
+  background: rgba(0, 0, 0, 0.06);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px 16px 48px;
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+}
+#obstacles .obstacle h2 {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.714em;
+  line-height: 2em;
+}
+#obstacles .obstacle p {
+  display: none;
+}
+#obstacles .obstacle img {
+  max-height: 200px;
 }

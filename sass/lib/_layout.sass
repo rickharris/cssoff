@@ -4,10 +4,11 @@
  * # Table of Contents
  *   1. Global layout definitions
  *   2. Header
- *   3. Obstacles
- *   4. Prizes
- *   5. Signup
- *   6. Footer
+ *   3. Content
+ *   4. Obstacles
+ *   5. Prizes
+ *   6. Signup
+ *   7. Footer
  */
 
 
@@ -15,7 +16,7 @@
 html
   +background-pattern(blue)
 
-+selection(color-palette(blue), color-palette(white))
++selection(rgba(#000, 0.25), color-palette(white))
 
 
 /* 2. Header
@@ -24,10 +25,12 @@ html
   @extend .container
   text-align: center
   padding-top: $base-line-height
+  padding-bottom: $base-line-height * 2
   h2
     @extend h1
   p
     @extend .opensans
+    margin-bottom: 0
     small
       font-size: 14px
   nav
@@ -54,3 +57,60 @@ html
       text-decoration: none
       &:hover
         color: lighten(color-palette(blue), 15%)
+
+
+/* 3. Content
+      ------- */
+section
+  border:
+    width: 7px 0
+    style: solid
+    color: rgba(#000, 0.06)
+  padding: 36px 0
+  overflow: hidden
+  h1
+    float: left
+    padding-right: 23px
+    position: relative
+    &:after
+      content: ""
+      width: 940px
+      height: 48px
+      background: image-url("patterns/yellow-checker.png") repeat-x 0 7px
+      position: absolute
+      top: 0
+      left: 100%
+    + *
+      clear: left
+
+
+/* 4. Obstacles
+ *    --------- */
+#obstacles
+  +background-pattern(orange)
+  header,
+  .content
+    @extend .container
+  nav
+    display: none
+    h2
+      @extend .visuallyhidden
+
+  .obstacle
+    background: rgba(#000, 0.06)
+    +border-radius(4px)
+    padding: 16px 16px 48px
+    margin-bottom: 16px
+    text-align: center
+    position: relative
+    h2
+      position: absolute
+      bottom: -16px
+      left: 0
+      width: 100%
+      text-align: center
+      +adjust-font-size-to(24px)
+    p
+      display: none
+    img
+      max-height: 200px

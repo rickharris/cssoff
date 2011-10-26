@@ -497,14 +497,14 @@ section {
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.06);
   padding: 36px 0;
-  overflow: hidden;
 }
-section h1, section .page-header-inner h2, .page-header-inner section h2 {
+section h2 {
   float: left;
   padding-right: 23px;
   position: relative;
+  margin-bottom: 48px;
 }
-section h1:after, section .page-header-inner h2:after, .page-header-inner section h2:after {
+section h2:after {
   content: "";
   width: 940px;
   height: 48px;
@@ -513,7 +513,7 @@ section h1:after, section .page-header-inner h2:after, .page-header-inner sectio
   top: 0;
   left: 100%;
 }
-section h1 + *, section .page-header-inner h2 + *, .page-header-inner section h2 + * {
+section h2 + * {
   clear: left;
 }
 
@@ -521,6 +521,9 @@ section h1 + *, section .page-header-inner h2 + *, .page-header-inner section h2
  *    --------- */
 #obstacles {
   background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+}
+#obstacles header {
+  overflow: hidden;
 }
 #obstacles nav {
   display: none;
@@ -538,7 +541,7 @@ section h1 + *, section .page-header-inner h2 + *, .page-header-inner section h2
   text-align: center;
   position: relative;
 }
-#obstacles .obstacle h2 {
+#obstacles .obstacle h3 {
   position: absolute;
   bottom: -16px;
   left: 0;

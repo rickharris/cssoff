@@ -61,7 +61,9 @@ html
 
 /* 3. Content
       ------- */
-section
+#obstacles,
+#prizes,
+.footer-wrapper
   border:
     width: 7px 0
     style: solid
@@ -98,21 +100,35 @@ section
     h2
       @extend .visuallyhidden
 
-  .obstacle
-    background: rgba(#000, 0.06)
-    +border-radius(4px)
-    padding: 16px 16px 48px
-    margin-bottom: 16px
+.obstacle
+  background: rgba(#000, 0.06)
+  +border-radius(4px)
+  padding: 16px 16px 48px
+  margin-bottom: 16px
+  text-align: center
+  position: relative
+  h3
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
     text-align: center
-    position: relative
-    h3
-      position: absolute
-      bottom: -16px
-      left: 0
-      width: 100%
-      text-align: center
-      +adjust-font-size-to(24px)
-    p
-      display: none
-    img
-      max-height: 200px
+    +adjust-font-size-to(18px)
+  p
+    display: none
+  img
+    max-height: 200px
+
+
+/* 5. Prizes
+ *    ------ */
+#prizes
+  +background-pattern(green)
+  section
+    @extend .container
+    overflow: hidden
+  ul
+    list-style: none none
+    padding-left: 0
+  li
+    @extend .obstacle

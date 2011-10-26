@@ -23,17 +23,17 @@
 
 /* The ever-great float-containing class */
 .clearfix, .container, .page-header-inner, #obstacles header,
-#obstacles .content, .row {
+#obstacles .content, #prizes section, .row {
   *zoom: 1;
 }
 .clearfix:before, .container:before, .page-header-inner:before, #obstacles header:before,
-#obstacles .content:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, .row:after {
+#obstacles .content:before, #prizes section:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
+#obstacles .content:after, #prizes section:after, .row:after {
   content: "";
   display: table;
 }
 .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, .row:after {
+#obstacles .content:after, #prizes section:after, .row:after {
   clear: both;
 }
 
@@ -232,12 +232,12 @@ h3 {
 /* 2. Container
  *    --------- */
 .container, .page-header-inner, #obstacles header,
-#obstacles .content {
+#obstacles .content, #prizes section {
   margin: 0 5%;
 }
 @media only screen and (min-width: 960px) {
   .container, .page-header-inner, #obstacles header,
-  #obstacles .content {
+  #obstacles .content, #prizes section {
     max-width: 940px;
     margin: 0 auto;
   }
@@ -492,19 +492,25 @@ html {
 
 /* 3. Content
  * ------- */
-section {
+#obstacles,
+#prizes,
+.footer-wrapper {
   border-width: 7px 0;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.06);
   padding: 36px 0;
 }
-section h2 {
+#obstacles h2,
+#prizes h2,
+.footer-wrapper h2 {
   float: left;
   padding-right: 23px;
   position: relative;
   margin-bottom: 48px;
 }
-section h2:after {
+#obstacles h2:after,
+#prizes h2:after,
+.footer-wrapper h2:after {
   content: "";
   width: 940px;
   height: 48px;
@@ -513,7 +519,9 @@ section h2:after {
   top: 0;
   left: 100%;
 }
-section h2 + * {
+#obstacles h2 + *,
+#prizes h2 + *,
+.footer-wrapper h2 + * {
   clear: left;
 }
 
@@ -528,7 +536,8 @@ section h2 + * {
 #obstacles nav {
   display: none;
 }
-#obstacles .obstacle {
+
+.obstacle, #prizes li {
   background: rgba(0, 0, 0, 0.06);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -541,18 +550,31 @@ section h2 + * {
   text-align: center;
   position: relative;
 }
-#obstacles .obstacle h3 {
+.obstacle h3, #prizes li h3 {
   position: absolute;
-  bottom: -16px;
+  bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
-  font-size: 1.714em;
-  line-height: 2em;
+  font-size: 1.286em;
+  line-height: 1.333em;
 }
-#obstacles .obstacle p {
+.obstacle p, #prizes li p {
   display: none;
 }
-#obstacles .obstacle img {
+.obstacle img, #prizes li img {
   max-height: 200px;
+}
+
+/* 5. Prizes
+ *    ------ */
+#prizes {
+  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+}
+#prizes section {
+  overflow: hidden;
+}
+#prizes ul {
+  list-style: none none;
+  padding-left: 0;
 }

@@ -211,8 +211,8 @@ section .page-header-inner .the-clock p, .page-header-inner .the-clock
 section p,
 section .the-clock .page-header-inner p, .the-clock .page-header-inner
 section p {
-  font-size: 2.857em;
-  line-height: 1.2em;
+  font-size: 2.143em;
+  line-height: 1.6em;
   color: #fefefe;
   text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
   margin: 0 0 24px;
@@ -299,7 +299,6 @@ input[type=text], .selector, input[type=email], input[type=url] {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  max-width: 400px;
   height: 50px;
   padding: 0 16px;
 }
@@ -461,6 +460,7 @@ html {
 }
 .page-header-inner p {
   margin-bottom: 0;
+  padding: 0 12px;
 }
 .page-header-inner p small {
   font-size: 14px;
@@ -609,6 +609,7 @@ html {
   text-align: center;
 }
 .the-clock .clock {
+  display: none;
   font-size: 140px;
   line-height: 330px;
   color: #f5eb00;
@@ -616,6 +617,8 @@ html {
   margin: 0 -4% 48px;
 }
 .the-clock p {
+  font-size: 1.429em;
+  line-height: 1.2em;
   max-width: 250px;
   margin: 0 auto;
 }

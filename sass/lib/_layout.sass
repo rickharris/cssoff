@@ -31,6 +31,7 @@ html
   p
     @extend .opensans
     margin-bottom: 0
+    padding: 0 12px
     small
       font-size: 14px
   nav
@@ -142,6 +143,7 @@ html
 .the-clock
   text-align: center
   .clock
+    display: none
     @extend .sprite-timer
     @extend .digitaldream
     font-size: 140px
@@ -151,5 +153,6 @@ html
     margin: 0 -4% 48px
   p
     @extend h2
+    +adjust-font-size-to(20px)
     max-width: 250px
     margin: 0 auto

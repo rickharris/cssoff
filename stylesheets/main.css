@@ -10,7 +10,7 @@
 /* 2. Helper classes and mixins
  *    ------------------------- */
 /* Hide from screenreaders */
-.visuallyhidden, .form-select label, .page-header-inner nav h2, .page-header-inner nav .the-clock p, .the-clock .page-header-inner nav p, #obstacles nav h2, #obstacles nav .the-clock p, .the-clock #obstacles nav p {
+.visuallyhidden, .form-select label, .page-header-inner nav h2, #obstacles nav h2 {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -23,25 +23,25 @@
 
 /* The ever-great float-containing class */
 .clearfix, .container, .page-header-inner, #obstacles header,
-#obstacles .content, #prizes section, #be-a-contestant, .row {
+#obstacles .content, #prizes section, #be-a-contestant, footer, .row {
   *zoom: 1;
 }
 .clearfix:before, .container:before, .page-header-inner:before, #obstacles header:before,
-#obstacles .content:before, #prizes section:before, #be-a-contestant:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, #prizes section:after, #be-a-contestant:after, .row:after {
+#obstacles .content:before, #prizes section:before, #be-a-contestant:before, footer:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
+#obstacles .content:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after {
   content: "";
   display: table;
 }
 .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, #prizes section:after, #be-a-contestant:after, .row:after {
+#obstacles .content:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after {
   clear: both;
 }
 
 /* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-hatch, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .the-clock .clock, .sprite-wheel, .sprite-wringer {
-  background: url('../images/sprite-s0d7937eb7e.png') no-repeat;
+.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-hatch, .sprite-knucklelodeon-logo, .vcard:after, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .the-clock .clock, .sprite-wheel, .sprite-wringer {
+  background: url('../images/sprite-s4da09a44f2.png') no-repeat;
 }
 
 .sprite-arrow, .selector span:after {
@@ -56,50 +56,56 @@
   width: 126px;
 }
 
-.sprite-nose {
+.sprite-knucklelodeon-logo, .vcard:after {
   background-position: 0 -176px;
+  height: 85px;
+  width: 134px;
+}
+
+.sprite-nose {
+  background-position: 0 -261px;
   height: 161px;
   width: 163px;
 }
 
 .sprite-slide {
-  background-position: 0 -337px;
+  background-position: 0 -422px;
   height: 168px;
   width: 118px;
 }
 
 .sprite-slime-small {
-  background-position: 0 -505px;
+  background-position: 0 -590px;
   height: 155px;
   width: 177px;
 }
 
 .sprite-slime {
-  background-position: 0 -660px;
+  background-position: 0 -745px;
   height: 206px;
   width: 236px;
 }
 
 .sprite-tank {
-  background-position: 0 -866px;
+  background-position: 0 -951px;
   height: 152px;
   width: 171px;
 }
 
 .sprite-timer, .the-clock .clock {
-  background-position: 0 -1018px;
+  background-position: 0 -1103px;
   height: 329px;
   width: 386px;
 }
 
 .sprite-wheel {
-  background-position: 0 -1347px;
+  background-position: 0 -1432px;
   height: 164px;
   width: 166px;
 }
 
 .sprite-wringer {
-  background-position: 0 -1511px;
+  background-position: 0 -1596px;
   height: 160px;
   width: 164px;
 }
@@ -138,7 +144,7 @@ textarea {
   font-style: normal;
 }
 
-.opensans, .page-header-inner p, .page-header-inner nav {
+.opensans, .page-header-inner p, .page-header-inner nav, footer {
   font-family: OpenSansSemibold, Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
@@ -187,30 +193,7 @@ img {
   max-width: 100%;
 }
 
-h1, .page-header-inner h2, .page-header-inner .the-clock p, .the-clock .page-header-inner p {
-  font-size: 2.143em;
-  line-height: 1.6em;
-  text-shadow: 1px 2px 0 #f2f2f2;
-  color: #fe6638;
-  margin: 24px 0;
-  font-weight: normal;
-}
-@media only screen and (min-width: 960px) {
-  h1, .page-header-inner h2, .page-header-inner .the-clock p, .the-clock .page-header-inner p {
-    font-size: 3.714em;
-    line-height: 0.923em;
-    text-shadow: 2px 3px 0 #f2f2f2;
-  }
-}
-
-h2, .the-clock p,
-section h1,
-section .page-header-inner h2, .page-header-inner
-section h2,
-section .page-header-inner .the-clock p, .page-header-inner .the-clock
-section p,
-section .the-clock .page-header-inner p, .the-clock .page-header-inner
-section p {
+h2 {
   font-size: 2.143em;
   line-height: 1.6em;
   color: #fefefe;
@@ -236,12 +219,12 @@ h3 {
 /* 2. Container
  *    --------- */
 .container, .page-header-inner, #obstacles header,
-#obstacles .content, #prizes section, #be-a-contestant {
+#obstacles .content, #prizes section, #be-a-contestant, footer {
   margin: 0 5%;
 }
 @media only screen and (min-width: 960px) {
   .container, .page-header-inner, #obstacles header,
-  #obstacles .content, #prizes section, #be-a-contestant {
+  #obstacles .content, #prizes section, #be-a-contestant, footer {
     max-width: 940px;
     margin: 0 auto;
   }
@@ -458,6 +441,10 @@ html {
   padding-top: 24px;
   padding-bottom: 48px;
 }
+.page-header-inner h2 {
+  color: #fe6638;
+  text-shadow: 1px 2px 0 #f2f2f2;
+}
 .page-header-inner p {
   margin-bottom: 0;
   padding: 0 12px;
@@ -504,34 +491,22 @@ html {
   border-color: rgba(0, 0, 0, 0.06);
   padding: 36px 0;
 }
-#obstacles h2, #obstacles .the-clock p, .the-clock #obstacles p,
+#obstacles h2,
 #prizes h2,
-#prizes .the-clock p, .the-clock
-#prizes p,
-.footer-wrapper h2,
-.footer-wrapper .the-clock p, .the-clock
-.footer-wrapper p {
+.footer-wrapper h2 {
   margin-bottom: 48px;
 }
 @media only screen and (min-width: 768px) {
-  #obstacles h2, #obstacles .the-clock p, .the-clock #obstacles p,
+  #obstacles h2,
   #prizes h2,
-  #prizes .the-clock p, .the-clock
-  #prizes p,
-  .footer-wrapper h2,
-  .footer-wrapper .the-clock p, .the-clock
-  .footer-wrapper p {
+  .footer-wrapper h2 {
     float: left;
     padding-right: 23px;
     position: relative;
   }
-  #obstacles h2:after, #obstacles .the-clock p:after, .the-clock #obstacles p:after,
+  #obstacles h2:after,
   #prizes h2:after,
-  #prizes .the-clock p:after, .the-clock
-  #prizes p:after,
-  .footer-wrapper h2:after,
-  .footer-wrapper .the-clock p:after, .the-clock
-  .footer-wrapper p:after {
+  .footer-wrapper h2:after {
     content: "";
     width: 940px;
     height: 48px;
@@ -540,13 +515,9 @@ html {
     top: 0;
     left: 100%;
   }
-  #obstacles h2 + *, #obstacles .the-clock p + *, .the-clock #obstacles p + *,
+  #obstacles h2 + *,
   #prizes h2 + *,
-  #prizes .the-clock p + *, .the-clock
-  #prizes p + *,
-  .footer-wrapper h2 + *,
-  .footer-wrapper .the-clock p + *, .the-clock
-  .footer-wrapper p + * {
+  .footer-wrapper h2 + * {
     clear: left;
   }
 }
@@ -619,6 +590,43 @@ html {
 .the-clock p {
   font-size: 1.429em;
   line-height: 1.2em;
+  text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
   max-width: 250px;
-  margin: 0 auto;
+  margin: 0 auto 96px;
+}
+
+/* 7. Footer
+ *    ------ */
+.footer-wrapper {
+  border-bottom: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+.vcard {
+  border-width: 7px 0 7px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.06);
+  padding: 24px 0;
+  margin-bottom: 24px;
+  position: relative;
+}
+.vcard:after {
+  content: "";
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  margin-left: -67px;
+}
+.vcard h2 {
+  font-size: 1.429em;
+  line-height: 1.2em;
+  margin: 36px 0 12px;
+  text-shadow: none;
+}
+.vcard p {
+  line-height: 18px;
+  margin-bottom: 12px;
 }

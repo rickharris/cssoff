@@ -27,11 +27,12 @@ html
   padding-top: $base-line-height
   padding-bottom: $base-line-height * 2
   h2
-    @extend h1
+    color: color-palette(orange)
+    text-shadow: 1px 2px 0 #f2f2f2
   p
     @extend .opensans
     margin-bottom: 0
-    padding: 0 12px
+    padding: 0 ($base-line-height / 2)
     small
       font-size: 14px
   nav
@@ -138,7 +139,7 @@ html
 #be-a-contestant
   @extend .container
   form
-    margin-bottom: 24px
+    margin-bottom: $base-line-height
 
 .the-clock
   text-align: center
@@ -152,7 +153,41 @@ html
     text-shadow: 5px 10px 0 #000
     margin: 0 -4% 48px
   p
-    @extend h2
     +adjust-font-size-to(20px)
+    text-shadow: 2px 4px 0 rgba(#000, 0.2)
     max-width: 250px
-    margin: 0 auto
+    margin: 0 auto $base-line-height * 4
+
+
+/* 7. Footer
+ *    ------ */
+.footer-wrapper
+  border-bottom: 0
+
+footer
+  @extend .container
+  @extend .opensans
+  text-align: center
+
+.vcard
+  border:
+    width: 7px 0 7px
+    style: solid
+    color: rgba(#000, 0.06)
+  padding: $base-line-height 0
+  margin-bottom: $base-line-height
+  position: relative
+  &:after
+    content: ""
+    @extend .sprite-knucklelodeon-logo
+    position: absolute
+    top: -48px
+    left: 50%
+    margin-left: -67px
+  h2
+    +adjust-font-size-to(20px)
+    margin: ($base-line-height * 1.5) 0 ($base-line-height / 2)
+    text-shadow: none
+  p
+    line-height: 18px
+    margin-bottom: $base-line-height / 2

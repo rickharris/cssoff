@@ -438,8 +438,7 @@ html {
  *    ------ */
 .page-header-inner {
   text-align: center;
-  padding-top: 24px;
-  padding-bottom: 48px;
+  padding: 24px 0;
 }
 .page-header-inner h2 {
   color: #fe6638;
@@ -489,12 +488,7 @@ html {
   border-width: 7px 0;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.06);
-  padding: 36px 0;
-}
-#obstacles h2,
-#prizes h2,
-.footer-wrapper h2 {
-  margin-bottom: 48px;
+  padding: 20px 0;
 }
 @media only screen and (min-width: 768px) {
   #obstacles h2,
@@ -550,8 +544,8 @@ html {
   left: 0;
   width: 100%;
   text-align: center;
-  font-size: 1.286em;
-  line-height: 1.333em;
+  font-size: 1.143em;
+  line-height: 1.5em;
 }
 .obstacle p, #prizes li p {
   display: none;

@@ -24,8 +24,7 @@ html
 .page-header-inner
   @extend .container
   text-align: center
-  padding-top: $base-line-height
-  padding-bottom: $base-line-height * 2
+  padding: $base-line-height 0
   h2
     color: color-palette(orange)
     text-shadow: 1px 2px 0 #f2f2f2
@@ -70,9 +69,7 @@ html
     width: 7px 0
     style: solid
     color: rgba(#000, 0.06)
-  padding: 36px 0
-  h2
-    margin-bottom: 48px
+  padding: 20px 0
   +respond-to(tablets)
     h2
       float: left
@@ -115,7 +112,7 @@ html
     left: 0
     width: 100%
     text-align: center
-    +adjust-font-size-to(18px)
+    +adjust-font-size-to(16px)
   p
     display: none
   img

@@ -39,6 +39,7 @@ html
     top: 0
     left: 0
     width: 100%
+    background: darken(color-palette(blue), 20%)
     background: rgba(color-palette(dark-blue), 0.2)
     text-transform: uppercase
     +adjust-font-size-to(14px, 1.333)
@@ -91,6 +92,8 @@ html
  *    --------- */
 #obstacles
   +background-pattern(orange)
+  .no-rgba &
+    border-color: darken(color-palette(orange), 6%)
   header,
   .content
     @extend .container
@@ -101,6 +104,9 @@ html
 
 .obstacle
   background: rgba(#000, 0.06)
+  .no-rgba &
+    +background-pattern(orange)
+    background-color: darken(color-palette(orange), 6%)
   +border-radius(4px)
   padding: 16px 16px 48px
   margin-bottom: 16px
@@ -123,6 +129,8 @@ html
  *    ------ */
 #prizes
   +background-pattern(green)
+  .no-rgba &
+    border-color: darken(color-palette(green), 6%)
   section
     @extend .container
   ul
@@ -130,6 +138,9 @@ html
     padding-left: 0
   li
     @extend .obstacle
+    .no-rgba &
+      +background-pattern(green)
+      background-color: darken(color-palette(green), 6%)
 
 /* 6. Signup
  *    ------ */
@@ -160,6 +171,8 @@ html
  *    ------ */
 .footer-wrapper
   border-bottom: 0
+  .no-rgba &
+    border-color: darken(color-palette(blue), 6%)
 
 footer
   @extend .container
@@ -171,6 +184,8 @@ footer
     width: 7px 0 7px
     style: solid
     color: rgba(#000, 0.06)
+  .no-rgba &
+    border-color: darken(color-palette(blue), 6%)
   padding: $base-line-height 0
   margin-bottom: $base-line-height
   position: relative

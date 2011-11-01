@@ -27,6 +27,7 @@ label
   +border-radius(4px)
   +box-sizing(border-box)
   width: 100%
+  *max-width: 288px
   height: 50px
   padding: 0 16px
   &:focus,
@@ -50,6 +51,7 @@ label
   +inline-block
   position: relative
   padding: 0
+  *max-width: 320px
   &.focus
     +box-shadow(0 0 6px lighten(color-palette(blue), 20%))
   &:after
@@ -111,6 +113,8 @@ button
   letter-spacing: 2px
   font-style: italic
   +transition(color 0.15s)
+  .no-csstransforms &
+    font-style: normal
   &:hover,
   &:focus
     color: lighten(color-palette(blue), 15%)

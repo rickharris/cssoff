@@ -282,6 +282,7 @@ input[type=text], .selector, input[type=email], input[type=url] {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
+  *max-width: 288px;
   height: 50px;
   padding: 0 16px;
 }
@@ -314,6 +315,7 @@ input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=te
   *vertical-align: auto;
   position: relative;
   padding: 0;
+  *max-width: 320px;
 }
 .selector {
   *display: inline;
@@ -398,6 +400,9 @@ button {
   -o-transition: color 0.15s;
   transition: color 0.15s;
 }
+.no-csstransforms button {
+  font-style: normal;
+}
 button:hover, button:focus {
   color: #badde9;
 }
@@ -456,6 +461,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
+  background: #3b97b5;
   background: rgba(15, 40, 48, 0.2);
   text-transform: uppercase;
   font-size: 1em;
@@ -521,6 +527,9 @@ html {
 #obstacles {
   background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
 }
+.no-rgba #obstacles {
+  border-color: #fe4f1a;
+}
 #obstacles nav {
   display: none;
 }
@@ -537,6 +546,10 @@ html {
   margin-bottom: 16px;
   text-align: center;
   position: relative;
+}
+.no-rgba .obstacle, .no-rgba #prizes li, #prizes .no-rgba li {
+  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background-color: #fe4f1a;
 }
 .obstacle h3, #prizes li h3 {
   position: absolute;
@@ -559,9 +572,16 @@ html {
 #prizes {
   background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
 }
+.no-rgba #prizes {
+  border-color: #6f9b31;
+}
 #prizes ul {
   list-style: none none;
   padding-left: 0;
+}
+.no-rgba #prizes li {
+  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background-color: #6f9b31;
 }
 
 /* 6. Signup
@@ -594,6 +614,9 @@ html {
 .footer-wrapper {
   border-bottom: 0;
 }
+.no-rgba .footer-wrapper {
+  border-color: #69b6cf;
+}
 
 footer {
   text-align: center;
@@ -606,6 +629,9 @@ footer {
   padding: 24px 0;
   margin-bottom: 24px;
   position: relative;
+}
+.no-rgba .vcard {
+  border-color: #69b6cf;
 }
 .vcard:after {
   content: "";

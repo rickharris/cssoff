@@ -10,7 +10,7 @@
 /* 2. Helper classes and mixins
  *    ------------------------- */
 /* Hide from screenreaders */
-.visuallyhidden, .form-select label, .page-header-inner nav h2, #obstacles nav h2 {
+.visuallyhidden, .form-select label, .page-header-inner nav h2, .page-header-inner nav #obstacles .obstacle h3, #obstacles .obstacle .page-header-inner nav h3, .page-header-inner nav #obstacles #prizes li h3, #obstacles #prizes li .page-header-inner nav h3, .page-header-inner nav #prizes #obstacles li h3, #prizes #obstacles li .page-header-inner nav h3, #obstacles nav h2, #obstacles nav .obstacle h3, #obstacles .obstacle nav h3, #obstacles nav #prizes li h3, #obstacles #prizes li nav h3, #prizes #obstacles nav li h3, #prizes #obstacles li nav h3, #obstacles nav h3 {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -22,26 +22,22 @@
 }
 
 /* The ever-great float-containing class */
-.clearfix, .container, .page-header-inner, #obstacles header,
-#obstacles .content, #prizes section, #be-a-contestant, footer, .row {
+.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer, .row, #obstacles {
   *zoom: 1;
 }
-.clearfix:before, .container:before, .page-header-inner:before, #obstacles header:before,
-#obstacles .content:before, #prizes section:before, #be-a-contestant:before, footer:before, .row:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after {
+.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant:before, footer:before, .row:before, #obstacles:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after {
   content: "";
   display: table;
 }
-.clearfix:after, .container:after, .page-header-inner:after, #obstacles header:after,
-#obstacles .content:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after {
+.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after {
   clear: both;
 }
 
 /* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-hatch, .sprite-knucklelodeon-logo, .vcard:after, .sprite-nose, .sprite-slide, .sprite-slime-small, .sprite-slime, .sprite-tank, .sprite-timer, .the-clock .clock, .sprite-wheel, .sprite-wringer {
-  background: url('../images/sprite-s4da09a44f2.png') no-repeat;
+.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-down-the-hatch, .sprite-human-hamster-wheel, .sprite-knucklelodeon-logo, .vcard:after, .sprite-pick-it, .sprite-slime-small, .sprite-slime, #obstacles .obstacle .copy:after, #obstacles #prizes li .copy:after, #prizes #obstacles li .copy:after, .sprite-sundae-slide, .sprite-the-tank, .sprite-the-wringer, .sprite-timer, .the-clock .clock {
+  background: url('../images/sprite-sc8a977c49d.png') no-repeat;
 }
 
 .sprite-arrow, .selector span:after {
@@ -50,64 +46,64 @@
   width: 27px;
 }
 
-.sprite-hatch {
+.sprite-down-the-hatch {
   background-position: 0 -15px;
   height: 161px;
   width: 126px;
 }
 
-.sprite-knucklelodeon-logo, .vcard:after {
+.sprite-human-hamster-wheel {
   background-position: 0 -176px;
-  height: 85px;
-  width: 134px;
-}
-
-.sprite-nose {
-  background-position: 0 -261px;
-  height: 161px;
-  width: 163px;
-}
-
-.sprite-slide {
-  background-position: 0 -422px;
-  height: 168px;
-  width: 118px;
-}
-
-.sprite-slime-small {
-  background-position: 0 -590px;
-  height: 155px;
-  width: 177px;
-}
-
-.sprite-slime {
-  background-position: 0 -745px;
-  height: 206px;
-  width: 236px;
-}
-
-.sprite-tank {
-  background-position: 0 -951px;
-  height: 152px;
-  width: 171px;
-}
-
-.sprite-timer, .the-clock .clock {
-  background-position: 0 -1103px;
-  height: 329px;
-  width: 386px;
-}
-
-.sprite-wheel {
-  background-position: 0 -1432px;
   height: 164px;
   width: 166px;
 }
 
-.sprite-wringer {
-  background-position: 0 -1596px;
+.sprite-knucklelodeon-logo, .vcard:after {
+  background-position: 0 -340px;
+  height: 85px;
+  width: 134px;
+}
+
+.sprite-pick-it {
+  background-position: 0 -425px;
+  height: 161px;
+  width: 163px;
+}
+
+.sprite-slime-small {
+  background-position: 0 -586px;
+  height: 155px;
+  width: 177px;
+}
+
+.sprite-slime, #obstacles .obstacle .copy:after, #obstacles #prizes li .copy:after, #prizes #obstacles li .copy:after {
+  background-position: 0 -741px;
+  height: 206px;
+  width: 236px;
+}
+
+.sprite-sundae-slide {
+  background-position: 0 -947px;
+  height: 168px;
+  width: 118px;
+}
+
+.sprite-the-tank {
+  background-position: 0 -1115px;
+  height: 152px;
+  width: 171px;
+}
+
+.sprite-the-wringer {
+  background-position: 0 -1267px;
   height: 160px;
   width: 164px;
+}
+
+.sprite-timer, .the-clock .clock {
+  background-position: 0 -1427px;
+  height: 329px;
+  width: 386px;
 }
 
 /* orignal file - sass/lib/_typography.sass
@@ -193,7 +189,7 @@ img {
   max-width: 100%;
 }
 
-h2 {
+h2, #obstacles .obstacle h3, #obstacles #prizes li h3, #prizes #obstacles li h3 {
   font-size: 2.143em;
   line-height: 1.6em;
   color: #fefefe;
@@ -218,13 +214,11 @@ h3 {
  *    ------------- */
 /* 2. Container
  *    --------- */
-.container, .page-header-inner, #obstacles header,
-#obstacles .content, #prizes section, #be-a-contestant, footer {
+.container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer {
   margin: 0 5%;
 }
 @media only screen and (min-width: 960px) {
-  .container, .page-header-inner, #obstacles header,
-  #obstacles .content, #prizes section, #be-a-contestant, footer {
+  .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer {
     max-width: 940px;
     margin: 0 auto;
   }
@@ -238,7 +232,8 @@ h3 {
 
 /* 4. Column
  *    ------ */
-.column {
+.column, #obstacles nav,
+#obstacles .content {
   float: left;
   width: 100%;
   padding-left: 20px;
@@ -270,7 +265,7 @@ label {
 input[type=text], .selector, input[type=email], input[type=url] {
   outline: 0;
   border: 0;
-  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320103621') repeat 0 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -332,7 +327,7 @@ input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=te
   top: 0;
   width: 50px;
   height: 50px;
-  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320103621') repeat 0 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -371,7 +366,7 @@ input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=te
 /* 4. Buttons
  *    ------- */
 .form-submit {
-  background: url('../images/slime-button-bg.png?1319398760') no-repeat 50% 50%;
+  background: url('../images/slime-button-bg.png?1320103621') no-repeat 50% 50%;
   text-align: center;
 }
 
@@ -419,7 +414,7 @@ button:active {
  */
 /* 1. Global layout definitions */
 html {
-  background: #80c1d6 url('../images/patterns/blue.png?1319166896') repeat 0 0;
+  background: #80c1d6 url('../images/patterns/blue.png?1320103621') repeat 0 0;
 }
 
 ::-moz-selection {
@@ -440,7 +435,7 @@ html {
   text-align: center;
   padding: 24px 0;
 }
-.page-header-inner h2 {
+.page-header-inner h2, .page-header-inner #obstacles .obstacle h3, #obstacles .obstacle .page-header-inner h3, .page-header-inner #obstacles #prizes li h3, #obstacles #prizes li .page-header-inner h3, .page-header-inner #prizes #obstacles li h3, #prizes #obstacles li .page-header-inner h3 {
   color: #fe6638;
   text-shadow: 1px 2px 0 #f2f2f2;
 }
@@ -482,44 +477,17 @@ html {
 
 /* 3. Content
  * ------- */
-#obstacles,
-#prizes,
-.footer-wrapper {
+.section, #obstacles, #prizes, .footer-wrapper {
   border-width: 7px 0;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.06);
   padding: 20px 0;
 }
-@media only screen and (min-width: 768px) {
-  #obstacles h2,
-  #prizes h2,
-  .footer-wrapper h2 {
-    float: left;
-    padding-right: 23px;
-    position: relative;
-  }
-  #obstacles h2:after,
-  #prizes h2:after,
-  .footer-wrapper h2:after {
-    content: "";
-    width: 940px;
-    height: 48px;
-    background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 7px;
-    position: absolute;
-    top: 0;
-    left: 100%;
-  }
-  #obstacles h2 + *,
-  #prizes h2 + *,
-  .footer-wrapper h2 + * {
-    clear: left;
-  }
-}
 
 /* 4. Obstacles
  *    --------- */
 #obstacles {
-  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320103621') repeat 0 0;
 }
 #obstacles nav {
   display: none;
@@ -557,7 +525,7 @@ html {
 /* 5. Prizes
  *    ------ */
 #prizes {
-  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320103621') repeat 0 0;
 }
 #prizes ul {
   list-style: none none;
@@ -614,7 +582,7 @@ footer {
   left: 50%;
   margin-left: -67px;
 }
-.vcard h2 {
+.vcard h2, .vcard #obstacles .obstacle h3, #obstacles .obstacle .vcard h3, .vcard #obstacles #prizes li h3, #obstacles #prizes li .vcard h3, .vcard #prizes #obstacles li h3, #prizes #obstacles li .vcard h3 {
   font-size: 1.429em;
   line-height: 1.2em;
   margin: 36px 0 12px;
@@ -623,4 +591,155 @@ footer {
 .vcard p {
   line-height: 18px;
   margin-bottom: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* Give the header big 'splat' image */
+  .page-header {
+    background: url('../images/header-splat.png?1320105591') no-repeat 50% 50%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  /* Add the checkered pattern to the section headings */
+  #obstacles section,
+  #prizes section,
+  .footer-wrapper section {
+    overflow: hidden;
+  }
+  #obstacles section h2, #obstacles section .obstacle h3, #obstacles .obstacle section h3, #obstacles section #prizes li h3, #obstacles #prizes li section h3, #prizes #obstacles section li h3, #prizes #obstacles li section h3,
+  #prizes section h2,
+  #prizes section #obstacles .obstacle h3, #obstacles .obstacle
+  #prizes section h3,
+  #prizes section #obstacles #prizes li h3, #obstacles #prizes li
+  #prizes section h3,
+  #prizes section #prizes #obstacles li h3, #prizes #obstacles li
+  #prizes section h3,
+  .footer-wrapper section h2,
+  .footer-wrapper section #obstacles .obstacle h3, #obstacles .obstacle
+  .footer-wrapper section h3,
+  .footer-wrapper section #obstacles #prizes li h3, #obstacles #prizes li
+  .footer-wrapper section h3,
+  .footer-wrapper section #prizes #obstacles li h3, #prizes #obstacles li
+  .footer-wrapper section h3 {
+    float: left;
+    padding-right: 23px;
+    position: relative;
+  }
+  #obstacles section h2:after, #obstacles section .obstacle h3:after, #obstacles .obstacle section h3:after, #obstacles section #prizes li h3:after, #obstacles #prizes li section h3:after, #prizes #obstacles section li h3:after, #prizes #obstacles li section h3:after,
+  #prizes section h2:after,
+  #prizes section #obstacles .obstacle h3:after, #obstacles .obstacle
+  #prizes section h3:after,
+  #prizes section #obstacles #prizes li h3:after, #obstacles #prizes li
+  #prizes section h3:after,
+  #prizes section #prizes #obstacles li h3:after, #prizes #obstacles li
+  #prizes section h3:after,
+  .footer-wrapper section h2:after,
+  .footer-wrapper section #obstacles .obstacle h3:after, #obstacles .obstacle
+  .footer-wrapper section h3:after,
+  .footer-wrapper section #obstacles #prizes li h3:after, #obstacles #prizes li
+  .footer-wrapper section h3:after,
+  .footer-wrapper section #prizes #obstacles li h3:after, #prizes #obstacles li
+  .footer-wrapper section h3:after {
+    content: "";
+    width: 940px;
+    height: 48px;
+    background: url('../images/patterns/yellow-checker.png?1320103621') repeat-x 0 7px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+  #obstacles section h2 + *, #obstacles section .obstacle h3 + *, #obstacles .obstacle section h3 + *, #obstacles section #prizes li h3 + *, #obstacles #prizes li section h3 + *, #prizes #obstacles section li h3 + *, #prizes #obstacles li section h3 + *,
+  #prizes section h2 + *,
+  #prizes section #obstacles .obstacle h3 + *, #obstacles .obstacle
+  #prizes section h3 + *,
+  #prizes section #obstacles #prizes li h3 + *, #obstacles #prizes li
+  #prizes section h3 + *,
+  #prizes section #prizes #obstacles li h3 + *, #prizes #obstacles li
+  #prizes section h3 + *,
+  .footer-wrapper section h2 + *,
+  .footer-wrapper section #obstacles .obstacle h3 + *, #obstacles .obstacle
+  .footer-wrapper section h3 + *,
+  .footer-wrapper section #obstacles #prizes li h3 + *, #obstacles #prizes li
+  .footer-wrapper section h3 + *,
+  .footer-wrapper section #prizes #obstacles li h3 + *, #prizes #obstacles li
+  .footer-wrapper section h3 + * {
+    clear: left;
+  }
+
+  /* Show the full obstacle layout */
+  #obstacles nav,
+  #obstacles .content {
+    width: 33.323%;
+  }
+  #obstacles nav {
+    width: 33.323%;
+    display: block;
+    padding-left: 0;
+  }
+  #obstacles nav ul {
+    padding-left: 0;
+  }
+  #obstacles nav li {
+    margin-bottom: 20px;
+  }
+  #obstacles nav a {
+    display: block;
+    padding: 16px;
+    background: #80b238 url('../images/patterns/green.png?1320103621') repeat 0 0;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+  #obstacles .content {
+    width: 66.657%;
+  }
+  #obstacles .obstacle, #obstacles #prizes li, #prizes #obstacles li {
+    background: none;
+    display: none;
+    height: 436px;
+    padding: 0;
+  }
+  #obstacles .obstacle:target, #obstacles #prizes li:target, #prizes #obstacles li:target {
+    display: block;
+  }
+  #obstacles .obstacle .copy, #obstacles #prizes li .copy, #prizes #obstacles li .copy {
+    position: relative;
+    padding: 55px 0;
+    max-height: 96px;
+  }
+  #obstacles .obstacle .copy:after, #obstacles #prizes li .copy:after, #prizes #obstacles li .copy:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    margin-left: -130px;
+  }
+  #obstacles .obstacle h3, #obstacles #prizes li h3, #prizes #obstacles li h3,
+  #obstacles .obstacle p,
+  #obstacles #prizes li p, #prizes
+  #obstacles li p {
+    -moz-transform: rotate(-9deg);
+    -webkit-transform: rotate(-9deg);
+    -o-transform: rotate(-9deg);
+    -ms-transform: rotate(-9deg);
+    transform: rotate(-9deg);
+    font-style: italic;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+  }
+  #obstacles .obstacle h3, #obstacles #prizes li h3, #prizes #obstacles li h3 {
+    margin-bottom: 0;
+  }
+  #obstacles .obstacle p, #obstacles #prizes li p, #prizes #obstacles li p {
+    display: block;
+  }
+  #obstacles .obstacle img, #obstacles #prizes li img, #prizes #obstacles li img {
+    max-height: 230px;
+  }
 }

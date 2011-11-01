@@ -1,0 +1,92 @@
++respond-to(tablets)
+
+  /* Give the header big 'splat' image */
+  .page-header
+    background: image-url('header-splat.png') no-repeat 50% 50%
+    +background-size(cover)
+
+  /* Add the checkered pattern to the section headings */
+  #obstacles,
+  #prizes,
+  .footer-wrapper
+    section
+      overflow: hidden
+      h2
+        float: left
+        padding-right: 23px
+        position: relative
+        &:after
+          content: ""
+          width: 940px
+          height: 48px
+          background: image-url("patterns/yellow-checker.png") repeat-x 0 7px
+          position: absolute
+          top: 0
+          left: 100%
+        + *
+          clear: left
+
+  /* Show the full obstacle layout */
+  #obstacles
+    $height: 436px
+    @extend .clearfix
+    nav,
+    .content
+      @extend .column
+      +column-width(4)
+    nav
+      @extend .column
+      +column-width(4)
+      display: block
+      padding-left: 0
+      h3
+        @extend .visuallyhidden
+      ul
+        padding-left: 0
+      li
+        margin-bottom: $gutter-width
+      a
+        display: block
+        padding: 16px
+        +background-pattern(green)
+        text-align: center
+        color: #fff
+        text-decoration: none
+    .content
+      @extend .column
+      +column-width(8)
+
+    .obstacle
+      background: none
+      display: none
+      height: $height
+      padding: 0
+      &:target
+        display: block
+      .copy
+        position: relative
+        padding: 55px 0
+        max-height: 96px
+        &:after
+          content: ""
+          display: block
+          @extend .sprite-slime
+          position: absolute
+          z-index: 1
+          top: 0
+          left: 50%
+          margin-left: -130px
+      h3,
+      p
+        +transform(rotate(-9deg))
+        font-style: italic
+        letter-spacing: 2px
+        position: relative
+        z-index: 2
+      h3
+        @extend h2
+        margin-bottom: 0
+      p
+        display: block
+      img
+        max-height: $height - (2 * 55) - 96

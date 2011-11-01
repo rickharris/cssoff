@@ -62,37 +62,20 @@ html
 
 /* 3. Content
       ------- */
-#obstacles,
-#prizes,
-.footer-wrapper
+.section
   border:
     width: 7px 0
     style: solid
     color: rgba(#000, 0.06)
   padding: 20px 0
-  +respond-to(tablets)
-    h2
-      float: left
-      padding-right: 23px
-      position: relative
-      &:after
-        content: ""
-        width: 940px
-        height: 48px
-        background: image-url("patterns/yellow-checker.png") repeat-x 0 7px
-        position: absolute
-        top: 0
-        left: 100%
-      + *
-        clear: left
 
 
 /* 4. Obstacles
  *    --------- */
 #obstacles
+  @extend .section
   +background-pattern(orange)
-  header,
-  .content
+  section
     @extend .container
   nav
     display: none
@@ -122,6 +105,7 @@ html
 /* 5. Prizes
  *    ------ */
 #prizes
+  @extend .section
   +background-pattern(green)
   section
     @extend .container
@@ -130,6 +114,7 @@ html
     padding-left: 0
   li
     @extend .obstacle
+
 
 /* 6. Signup
  *    ------ */
@@ -159,6 +144,7 @@ html
 /* 7. Footer
  *    ------ */
 .footer-wrapper
+  @extend .section
   border-bottom: 0
 
 footer

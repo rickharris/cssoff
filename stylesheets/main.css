@@ -981,7 +981,7 @@ footer {
   #obstacles .obstacle h3 {
     font-size: 2.143em;
     line-height: 1.6em;
-    margin-bottom: 6px;
+    margin-bottom: 0;
   }
   #obstacles .obstacle p {
     display: block;

@@ -2,9 +2,9 @@
  * orignal file - sass/lib/_layout.sass
  *
  * # Table of Contents
- *   1. Global layout definitions
- *   2. Header
- *   3. Content
+ *   1. Patterns
+ *   2. Global layout definitions
+ *   3. Header
  *   4. Obstacles
  *   5. Prizes
  *   6. Signup
@@ -12,14 +12,47 @@
  */
 
 
-/* 1. Global layout definitions */
+/* 1. Patterns
+ *    -------- */
+.box
+  background: rgba(#000, 0.06)
+  .no-rgba &
+    +background-pattern(orange)
+    background-color: darken(color-palette(orange), 6%)
+  +border-radius(4px)
+  padding: 16px 16px 48px
+  margin-bottom: 16px
+  text-align: center
+  position: relative
+  h3
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    text-align: center
+    +adjust-font-size-to(16px)
+  p
+    display: none
+  img
+    max-height: 200px
+
+.section
+  border:
+    width: 7px 0
+    style: solid
+    color: rgba(#000, 0.06)
+  padding: 20px 0
+
+
+/* 2. Global layout definitions
+ *    ------------------------- */
 html
   +background-pattern(blue)
 
 +selection(rgba(#000, 0.25), color-palette(white))
 
 
-/* 2. Header
+/* 3. Header
  *    ------ */
 .page-header-inner
   @extend .container
@@ -61,16 +94,6 @@ html
         color: lighten(color-palette(blue), 15%)
 
 
-/* 3. Content
-      ------- */
-.section
-  border:
-    width: 7px 0
-    style: solid
-    color: rgba(#000, 0.06)
-  padding: 20px 0
-
-
 /* 4. Obstacles
  *    --------- */
 #obstacles
@@ -82,30 +105,17 @@ html
     @extend .container
   nav
     display: none
-    h2
+    h3
       @extend .visuallyhidden
+  .content
+    padding-left: 0
 
-.obstacle
-  background: rgba(#000, 0.06)
-  .no-rgba &
-    +background-pattern(orange)
-    background-color: darken(color-palette(orange), 6%)
-  +border-radius(4px)
-  padding: 16px 16px 48px
-  margin-bottom: 16px
-  text-align: center
-  position: relative
-  h3
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    text-align: center
-    +adjust-font-size-to(16px)
-  p
-    display: none
-  img
-    max-height: 200px
+  .obstacle
+    @extend .box
+    /* No animation for mobile */
+    &.active,
+    &.hidden
+      +experimental(animation-duration, 0s)
 
 
 /* 5. Prizes
@@ -121,7 +131,7 @@ html
     list-style: none none
     padding-left: 0
   li
-    @extend .obstacle
+    @extend .box
     .no-rgba &
       +background-pattern(green)
       background-color: darken(color-palette(green), 6%)

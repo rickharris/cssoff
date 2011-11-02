@@ -1,35 +1,64 @@
+/*
+ * orignal file - sass/lib/_tablet.sass
+ *
+ * # Table of Contents
+ *   1. Patterns
+ *   2. Header
+ *   3. Content
+ *   4. Obstacles
+ *   5. Prizes
+ *   6. Signup
+ *   7. Footer
+ */
+
+
 +respond-to(tablets)
 
+  /* 1. Patterns
+   *    -------- */
+  h2, .h2
+    +adjust-font-size-to(40px)
+
+  .checkered
+    float: left
+    padding-right: 23px
+    position: relative
+    &:after
+      content: ""
+      width: 940px
+      height: 100%
+      background: image-url("patterns/yellow-checker.png") repeat-x 0 50%
+      position: absolute
+      top: 0
+      left: 100%
+    & + *
+      clear: left
+
+  .section
+    padding-top: 36px
+    padding-bottom: 36px
+    section
+      overflow: hidden
+      h2
+        @extend .checkered
+        margin-bottom: 36px
+
+
+  /* 2. Header
+   *    ------ */
   /* Give the header big 'splat' image */
   .page-header
     background: image-url('header-splat.png') no-repeat 50% 50%
     +background-size(cover)
 
-  /* Add the checkered pattern to the section headings */
-  #obstacles,
-  #prizes,
-  .footer-wrapper
-    section
-      overflow: hidden
-      h2
-        float: left
-        padding-right: 23px
-        position: relative
-        &:after
-          content: ""
-          width: 940px
-          height: 48px
-          background: image-url("patterns/yellow-checker.png") repeat-x 0 7px
-          position: absolute
-          top: 0
-          left: 100%
-        + *
-          clear: left
 
+  /* 3. Obstacles
+   *    --------- */
   /* Show the full obstacle layout */
   #obstacles
-    $height: 436px
     @extend .clearfix
+    section
+      overflow: hidden
     nav,
     .content
       @extend .column
@@ -38,9 +67,7 @@
       @extend .column
       +column-width(4)
       display: block
-      padding-left: 0
-      h3
-        @extend .visuallyhidden
+      padding-left: 0 /* Override the column class default spacing */
       ul
         padding-left: 0
       li
@@ -53,6 +80,10 @@
         text-align: center
         color: #fff
         text-decoration: none
+        +transition-property(background-color color)
+        +transition-duration(0.2s)
+        &:hover
+          background-color: lighten(color-palette(green), 3%)
         &.active
           +background-pattern(yellow)
           color: color-palette(orange)
@@ -64,10 +95,15 @@
 
     .obstacle
       position: absolute
-      width: 100%
+      /* Set all offsets to 0 to stretch to full width/height */
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
       opacity: 0
+      +transform(translateZ(0)) /* Fixes weird font transition during animation in webkit */
+      /* Override default styles from mobile */
       background: none
-      height: $height
       padding: 0
       &.active
         @extend .animated
@@ -98,12 +134,12 @@
         letter-spacing: 2px
         position: relative
         z-index: 2
+        text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2)
       h3
-        @extend h2
-        margin-bottom: 0
-        &:after
-          display: none
+        +adjust-font-size-to(30px)
+        margin-bottom: 6px
       p
         display: block
+        +adjust-font-size-to(16px)
       img
-        max-height: $height - (2 * 55) - 96
+        max-height: 230px

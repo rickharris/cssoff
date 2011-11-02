@@ -49,20 +49,35 @@
         display: block
         padding: 16px
         +background-pattern(green)
+        +border-radius(4px)
         text-align: center
         color: #fff
         text-decoration: none
+        &.active
+          +background-pattern(yellow)
+          color: color-palette(orange)
+
     .content
       @extend .column
       +column-width(8)
+      position: relative
 
     .obstacle
+      position: absolute
+      width: 100%
+      opacity: 0
       background: none
-      display: none
       height: $height
       padding: 0
-      &:target
-        display: block
+      &.active
+        @extend .animated
+        @extend .fadeInLeft
+        +experimental(animation-duration, 0.6s)
+        opacity: 1
+      &.hidden
+        @extend .animated
+        @extend .fadeOutUp
+        +experimental(animation-duration, 0.6s)
       .copy
         position: relative
         padding: 55px 0
@@ -86,6 +101,8 @@
       h3
         @extend h2
         margin-bottom: 0
+        &:after
+          display: none
       p
         display: block
       img

@@ -151,3 +151,24 @@
         +adjust-font-size-to(16px)
       img
         max-height: 230px
+
+
+  /* 4. Prizes
+   *    ------ */
+  #prizes
+    li
+      @extend .column
+      +column-width(6)
+      padding: $gutter-width * 2
+      background: none
+      &:first-child
+        margin-bottom: 100px - ($gutter-width * 2)
+      &:nth-child(odd)
+        clear: left
+      &:last-child
+        margin-top: -201px
+      h3
+        margin-bottom: 0
+      img
+        max-height: none
+

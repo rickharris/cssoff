@@ -392,7 +392,7 @@ h3 {
 /* 4. Column
  *    ------ */
 .column, #obstacles nav,
-#obstacles .content {
+#obstacles .content, #prizes li {
   float: left;
   width: 100%;
   padding-left: 20px;
@@ -990,5 +990,28 @@ footer {
   }
   #obstacles .obstacle img {
     max-height: 230px;
+  }
+
+  /* 4. Prizes
+   *    ------ */
+  #prizes li {
+    width: 49.99%;
+    padding: 40px;
+    background: none;
+  }
+  #prizes li:first-child {
+    margin-bottom: 60px;
+  }
+  #prizes li:nth-child(odd) {
+    clear: left;
+  }
+  #prizes li:last-child {
+    margin-top: -201px;
+  }
+  #prizes li h3 {
+    margin-bottom: 0;
+  }
+  #prizes li img {
+    max-height: none;
   }
 }

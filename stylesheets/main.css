@@ -640,9 +640,10 @@ html {
  *    ------ */
 .page-header-inner {
   text-align: center;
-  padding: 24px 0;
+  padding: 60px 0;
 }
 .page-header-inner h2 {
+  margin: 36px 0 12px;
   color: #fe6638;
   text-shadow: 1px 2px 0 #f2f2f2;
 }
@@ -850,6 +851,16 @@ footer {
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  .page-header-inner h2 {
+    text-shadow: 1px 3px 0 #f2f2f2;
+  }
+  .page-header-inner p {
+    padding: 0;
+  }
+  .page-header-inner p small {
+    font-size: 18px;
   }
 
   /* 3. Obstacles

@@ -27,10 +27,21 @@
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <meta http-equiv="cleartype" content="on">
 
-    <!-- 3rd party stylesheets -->
-    <link rel="stylesheet" href="vendor/normalize.css"/>
-    <!-- Custom stylesheets -->
-    <link rel="stylesheet" href="stylesheets/main.css"/>
+    <!--
+      This site uses so many transparent PNG's, let's not even try some hacky
+      solutions to make them work in IE6. Just serve the good stylesheet to the
+      good browsers and the universal IE6 stylesheet to IE6.
+    -->
+    <!--[if ! lte IE 6]><!-->
+      <!-- 3rd party stylesheets -->
+      <link rel="stylesheet" href="vendor/normalize.css"/>
+      <!-- Custom stylesheets -->
+      <link rel="stylesheet" href="stylesheets/main.css"/>
+    <!--<![endif]-->
+
+    <!--[if lte IE 6]>
+      <link rel="stylesheet" href="vendor/ie6.css" media="screen, projection">
+    <![endif]-->
 
     <!-- Modernizr -->
     <script src="vendor/modernizr-custom.min.js"></script>

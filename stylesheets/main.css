@@ -506,7 +506,7 @@ label {
 input[type=text], .selector, input[type=email], input[type=url] {
   outline: 0;
   border: 0;
-  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320349279') repeat 0 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -582,7 +582,7 @@ select {
   top: 0;
   width: 50px;
   height: 50px;
-  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320349279') repeat 0 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -626,7 +626,7 @@ select {
 /* 4. Buttons
  *    ------- */
 .form-submit {
-  background: url('../images/slime-button-bg.png?1320345519') no-repeat 50% 50%;
+  background: url('../images/slime-button-bg.png?1320349279') no-repeat 50% 50%;
   text-align: center;
 }
 
@@ -691,7 +691,7 @@ button:active {
   position: relative;
 }
 .no-rgba .box, .no-rgba #obstacles .obstacle, #obstacles .no-rgba .obstacle, .no-rgba #prizes li, #prizes .no-rgba li {
-  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320349279') repeat 0 0;
   background-color: #fe4f1a;
 }
 .box h3, #obstacles .obstacle h3, #prizes li h3 {
@@ -720,7 +720,7 @@ button:active {
 /* 2. Global layout definitions
  *    ------------------------- */
 html {
-  background: #80c1d6 url('../images/patterns/blue.png?1320345475') repeat 0 0;
+  background: #80c1d6 url('../images/patterns/blue.png?1320349279') repeat 0 0;
 }
 
 ::-moz-selection {
@@ -784,18 +784,18 @@ html {
   color: #e6e6e6;
 }
 .no-rgba .page-header-inner .prizes {
-  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320349279') repeat 0 0;
   background-color: #fe4f1a;
 }
 .no-rgba .page-header-inner .be-a-contestant {
-  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320349279') repeat 0 0;
   background-color: #6f9b31;
 }
 
 /* 4. Obstacles
  *    --------- */
 #obstacles {
-  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320349279') repeat 0 0;
 }
 .no-rgba #obstacles {
   border-color: #fe4f1a;
@@ -809,7 +809,7 @@ html {
 #obstacles .obstacle {
   /* No animation for mobile */
 }
-#obstacles .obstacle.active, #obstacles .obstacle.hidden {
+.cssanimations #obstacles .obstacle.active, .cssanimations #obstacles .obstacle.hidden {
   -moz-animation-duration: 0s;
   -webkit-animation-duration: 0s;
   -o-animation-duration: 0s;
@@ -821,7 +821,7 @@ html {
 /* 5. Prizes
  *    ------ */
 #prizes {
-  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320349279') repeat 0 0;
 }
 .no-rgba #prizes {
   border-color: #6f9b31;
@@ -831,7 +831,7 @@ html {
   padding-left: 0;
 }
 .no-rgba #prizes li {
-  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320349279') repeat 0 0;
   background-color: #6f9b31;
 }
 
@@ -941,7 +941,7 @@ footer {
     content: "";
     width: 940px;
     height: 100%;
-    background: url('../images/patterns/yellow-checker.png?1320345479') repeat-x 0 7px;
+    background: url('../images/patterns/yellow-checker.png?1320349279') repeat-x 0 7px;
     position: absolute;
     top: 0;
     left: 100%;
@@ -972,7 +972,7 @@ footer {
    *    ------ */
   /* Give the header big 'splat' image */
   .page-header {
-    background: url('../images/header-splat.png?1320345372') no-repeat 50% 50%;
+    background: url('../images/header-splat.png?1320349279') no-repeat 50% 50%;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -1022,7 +1022,7 @@ footer {
   #obstacles nav a {
     display: block;
     padding: 16px;
-    background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
+    background: #80b238 url('../images/patterns/green.png?1320349279') repeat 0 0;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     -o-border-radius: 4px;
@@ -1045,7 +1045,7 @@ footer {
     background-color: #88be3c;
   }
   #obstacles nav a.active {
-    background: #eef13f url('../images/patterns/yellow.png?1320345517') repeat 0 0;
+    background: #eef13f url('../images/patterns/yellow.png?1320349279') repeat 0 0;
     color: #fe6638;
   }
   #obstacles .content {
@@ -1209,7 +1209,7 @@ footer {
   }
   .info p {
     width: 300px;
-    margin-bottom: 36px;
+    margin-bottom: 0;
   }
   .info h2 + p {
     text-align: right;
@@ -1221,7 +1221,7 @@ footer {
     text-align: left;
     padding-left: 10px;
     margin-left: 50%;
-    margin-top: -90px;
+    margin-top: -54px;
   }
   .info [itemprop=address] {
     width: 180px;
@@ -1333,7 +1333,7 @@ footer {
   #be-a-contestant form {
     width: 49.99%;
     padding-left: 0;
-    padding-right: 80px;
+    padding-right: 90px;
   }
   #be-a-contestant .the-clock {
     width: 49.99%;
@@ -1344,6 +1344,11 @@ footer {
   }
 }
 /* Legacy fixes */
+.lt-ie9 button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .lt-ie8 .form-text label {
   left: 38px;
 }
@@ -1352,6 +1357,10 @@ footer {
 }
 .lt-ie8 .selector {
   width: 100%;
+}
+.lt-ie8 button {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .lt-ie8 .container, .lt-ie8 .page-header-inner, .lt-ie8 #obstacles section, #obstacles .lt-ie8 section, .lt-ie8 #prizes section, #prizes .lt-ie8 section, .lt-ie8 #be-a-contestant section, #be-a-contestant .lt-ie8 section, .lt-ie8 footer {
   max-width: 600px;

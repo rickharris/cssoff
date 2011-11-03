@@ -28,6 +28,7 @@ label
   width: 100%
   height: 50px
   padding: 0 16px
+  +transition(box-shadow 0.2s)
   &:focus,
   &.focus
     +box-shadow(0 0 6px lighten(color-palette(blue), 20%))
@@ -56,8 +57,6 @@ select
   position: relative
   z-index: 1
   padding: 0
-  &.focus
-    +box-shadow(0 0 6px lighten(color-palette(blue), 20%))
   &:after
     content: ""
     position: absolute

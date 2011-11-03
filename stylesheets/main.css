@@ -434,6 +434,10 @@ input[type=text], .selector, input[type=email], input[type=url] {
   width: 100%;
   height: 50px;
   padding: 0 16px;
+  -moz-transition: box-shadow 0.2s;
+  -webkit-transition: box-shadow 0.2s;
+  -o-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 input[type=text]:focus, .selector:focus, input[type=text].focus, .focus.selector, input[type=email]:focus, input[type=email].focus, input[type=url]:focus, input[type=url].focus {
   -moz-box-shadow: 0 0 6px #cde7ef;
@@ -477,12 +481,6 @@ select {
 }
 .selector {
   *display: inline;
-}
-.selector.focus {
-  -moz-box-shadow: 0 0 6px #cde7ef;
-  -webkit-box-shadow: 0 0 6px #cde7ef;
-  -o-box-shadow: 0 0 6px #cde7ef;
-  box-shadow: 0 0 6px #cde7ef;
 }
 .selector:after {
   content: "";

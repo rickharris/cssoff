@@ -8,7 +8,10 @@
     // Form enhancements
     if (!isLegacy) {
       $('select').uniform();
-      $('label').inFieldLabels();
+      $('label').inFieldLabels({
+        fadeOpacity: 0.7,
+        fadeDuration: 200
+      });
     }
 
     // Obstacle show/hide

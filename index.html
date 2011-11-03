@@ -66,7 +66,8 @@
     </script>
   </head>
   <body>
-    <header class="page-header">
+
+    <header class="page-header" role="banner">
       <div class="page-header-inner">
         <h1>
           <img src="images/logo.png" alt="Triple Dare logo"/>
@@ -75,7 +76,7 @@
         <p>
           <small>Airing Thursdays on the Knucklelodeon Network&trade;</small>
         </p>
-        <nav>
+        <nav role="navigation">
           <h2>Site Navigation</h2>
           <ul>
             <li><a href="#obstacles">Obstacles</a></li>
@@ -86,178 +87,187 @@
         </nav>
       </div>
     </header>
-    <div id="obstacles">
-      <section>
-        <h2>Obstacles</h2>
-        <nav>
-          <h3>Navigate the Obstacles</h3>
+
+    <div role="main">
+
+      <div id="obstacles">
+        <section>
+          <h2>Obstacles</h2>
+          <nav role="navigation">
+            <h3>Navigate the Obstacles</h3>
+            <ul>
+              <li>
+                <a class="the-tank active" href="#the-tank">The Tank</a>
+              </li>
+              <li>
+                <a class="sundae-slide" href="#sundae-slide">Sundae Slide</a>
+              </li>
+              <li>
+                <a class="human-hamster-wheel" href="#human-hamster-wheel">Human Hamster Wheel</a>
+              </li>
+              <li>
+                <a class="down-the-hatch" href="#down-the-hatch">Down the Hatch</a>
+              </li>
+              <li>
+                <a class="pick-it" href="#pick-it">Pick It!</a>
+              </li>
+              <li>
+                <a class="the-wringer" href="#the-wringer">The Wringer</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="content">
+            <div class="obstacle active" id="the-tank">
+              <div class="copy">
+                <h3>The Tank</h3>
+                <p>Make it through unslimed!</p>
+              </div>
+              <img src="images/obstacles/the-tank.png" alt="The Tank"/>
+            </div>
+            <div class="obstacle" id="sundae-slide">
+              <div class="copy">
+                <h3>Sundae Slide</h3>
+                <p>Tooth decay made fun!</p>
+              </div>
+              <img src="images/obstacles/sundae-slide.png" alt="Sundae Slide"/>
+            </div>
+            <div class="obstacle" id="human-hamster-wheel">
+              <div class="copy">
+                <h3>Human Hamster Wheel</h3>
+                <p>Help keep our lights on!</p>
+              </div>
+              <img src="images/obstacles/human-hamster-wheel.png" alt="Human Hamster Wheel"/>
+            </div>
+            <div class="obstacle" id="down-the-hatch">
+              <div class="copy">
+                <h3>Down the Hatch</h3>
+                <p>6ft slide covered in gunk!</p>
+              </div>
+              <img src="images/obstacles/down-the-hatch.png" alt="Down the Hatch"/>
+            </div>
+            <div class="obstacle" id="pick-it">
+              <div class="copy">
+                <h3>Pick It!</h3>
+                <p>Green gobbledigoodness.</p>
+              </div>
+              <img src="images/obstacles/pick-it.png" alt="Pick It!"/>
+            </div>
+            <div class="obstacle" id="the-wringer">
+              <div class="copy">
+                <h3>The Wringer</h3>
+                <p>Slime your way through!</p>
+              </div>
+              <img src="images/obstacles/the-wringer.png" alt="The Wringer"/>
+            </div>
+          </div>
+        </section>
+      </div><!-- /#obstacles -->
+
+      <div id="prizes">
+        <section>
+          <h2>Prizes</h2>
           <ul>
             <li>
-              <a class="the-tank active" href="#the-tank">The Tank</a>
+              <h3>A trip to Space Camp!</h3>
+              <img src="images/prizes/space-camp.png" src="Space Camp badge"/>
             </li>
             <li>
-              <a class="sundae-slide" href="#sundae-slide">Sundae Slide</a>
+              <h3>A Nash skateboard!</h3>
+              <img src="images/prizes/skateboard.png" src="Nash skateboard"/>
             </li>
             <li>
-              <a class="human-hamster-wheel" href="#human-hamster-wheel">Human Hamster Wheel</a>
+              <h3>A Casio Rapman keyboard!</h3>
+              <img src="images/prizes/keyboard.png" src="Casio Rapman keyboard"/>
             </li>
             <li>
-              <a class="down-the-hatch" href="#down-the-hatch">Down the Hatch</a>
+              <h3>A 13 inch TV/VCR combo!</h3>
+              <img src="images/prizes/tv.png" src="TV/VCR combo"/>
             </li>
-            <li>
-              <a class="pick-it" href="#pick-it">Pick It!</a>
-            </li>
-            <li>
-              <a class="the-wringer" href="#the-wringer">The Wringer</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="content">
-          <div class="obstacle active" id="the-tank">
-            <div class="copy">
-              <h3>The Tank</h3>
-              <p>Make it through unslimed!</p>
-            </div>
-            <img src="images/obstacles/the-tank.png" alt="The Tank"/>
+        </section>
+      </div><!-- /#prizes -->
+
+      <div id="be-a-contestant">
+        <section>
+          <h2>Be a Contestant</h2>
+          <form action="" method="POST">
+            <p class="form-text name">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="signup[name]"/>
+            </p>
+            <p class="form-text email">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="signup[email]"/>
+            </p>
+            <p class="form-text team-name">
+              <label for="team-name">Team Name</label>
+              <input type="text" id="team-name" name="signup[team_name]"/>
+            </p>
+            <p class="form-select team-color">
+              <label for="team-color">Team Color</label>
+              <select id="team-color" name="signup[team_color]">
+                <option value="">Team Color</option>
+                <option value="blue">Blue</option>
+                <option value="orange">Orange</option>
+                <option value="green">Green</option>
+              </select>
+            </p>
+            <p class="form-select gender">
+              <label for="gender">Gender</label>
+              <select id="gender" name="signup[gender]">
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </p>
+            <p class="form-text photo">
+              <label for="photo">Profile Photo URL</label>
+              <input type="url" id="photo" name="signup[photo]"/>
+            </p>
+            <p class="form-submit">
+              <button type="submit">Submit Entry!</button>
+            </p>
+          </form>
+          <div class="the-clock">
+            <div class="clock">60</div>
+            <p>The clock is ticking!</p>
           </div>
-          <div class="obstacle" id="sundae-slide">
-            <div class="copy">
-              <h3>Sundae Slide</h3>
-              <p>Tooth decay made fun!</p>
-            </div>
-            <img src="images/obstacles/sundae-slide.png" alt="Sundae Slide"/>
-          </div>
-          <div class="obstacle" id="human-hamster-wheel">
-            <div class="copy">
-              <h3>Human Hamster Wheel</h3>
-              <p>Help keep our lights on!</p>
-            </div>
-            <img src="images/obstacles/human-hamster-wheel.png" alt="Human Hamster Wheel"/>
-          </div>
-          <div class="obstacle" id="down-the-hatch">
-            <div class="copy">
-              <h3>Down the Hatch</h3>
-              <p>6ft slide covered in gunk!</p>
-            </div>
-            <img src="images/obstacles/down-the-hatch.png" alt="Down the Hatch"/>
-          </div>
-          <div class="obstacle" id="pick-it">
-            <div class="copy">
-              <h3>Pick It!</h3>
-              <p>Green gobbledigoodness.</p>
-            </div>
-            <img src="images/obstacles/pick-it.png" alt="Pick It!"/>
-          </div>
-          <div class="obstacle" id="the-wringer">
-            <div class="copy">
-              <h3>The Wringer</h3>
-              <p>Slime your way through!</p>
-            </div>
-            <img src="images/obstacles/the-wringer.png" alt="The Wringer"/>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div id="prizes">
-      <section>
-        <h2>Prizes</h2>
-        <ul>
-          <li>
-            <h3>A trip to Space Camp!</h3>
-            <img src="images/prizes/space-camp.png" src="Space Camp badge"/>
-          </li>
-          <li>
-            <h3>A Nash skateboard!</h3>
-            <img src="images/prizes/skateboard.png" src="Nash skateboard"/>
-          </li>
-          <li>
-            <h3>A Casio Rapman keyboard!</h3>
-            <img src="images/prizes/keyboard.png" src="Casio Rapman keyboard"/>
-          </li>
-          <li>
-            <h3>A 13 inch TV/VCR combo!</h3>
-            <img src="images/prizes/tv.png" src="TV/VCR combo"/>
-          </li>
-      </section>
-    </div>
-    <div class="footer-wrapper">
-      <section id="be-a-contestant">
-        <h2>Be a Contestant</h2>
-        <form action="" method="POST">
-          <p class="form-text name">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="signup[name]"/>
-          </p>
-          <p class="form-text email">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="signup[email]"/>
-          </p>
-          <p class="form-text team-name">
-            <label for="team-name">Team Name</label>
-            <input type="text" id="team-name" name="signup[team_name]"/>
-          </p>
-          <p class="form-select team-color">
-            <label for="team-color">Team Color</label>
-            <select id="team-color" name="signup[team_color]">
-              <option value="">Team Color</option>
-              <option value="blue">Blue</option>
-              <option value="orange">Orange</option>
-              <option value="green">Green</option>
-            </select>
-          </p>
-          <p class="form-select gender">
-            <label for="gender">Gender</label>
-            <select id="gender" name="signup[gender]">
-              <option value="">Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </p>
-          <p class="form-text photo">
-            <label for="photo">Profile Photo URL</label>
-            <input type="url" id="photo" name="signup[photo]"/>
-          </p>
-          <p class="form-submit">
-            <button type="submit">Submit Entry!</button>
-          </p>
-        </form>
-        <div class="the-clock">
-          <div class="clock">60</div>
-          <p>The clock is ticking!</p>
-        </div>
-      </section>
-      <footer>
-        <div itemscope itemtype="http://data-vocabulary.org/Organization" class="info">
-          <h2 itemprop="name">The Knucklelodeon Network</h2>
-          <p>
-            The Knucklelodeon Network is not affiliated with Nickelodeon, nor is
-            it an actual television network
-          </p>
-          <p>
-            Triple Dare contestents consent to potential physical bodily harm,
-            like being burried alive by a giant waffle.
-          </p>
-          <h2>Visit Our Studios</h2>
-          <p itemprop="address">
-            11 Slime Time Way
-            Sacrameno, CA 94203
-          </p>
-          <p itemprop="address">
-            329 Gunk Road
-            Jacksonville, FL 32099
-          </p>
-        </div>
-        <div class="meta">
-          <p>
-            This design is licensed under a Creative Commons
-            Attribution-NonCommercial-NoDerivs 3.0 License
-          </p>
-          <p class="cc-icon">
-            <img src="images/cc-icon.png" alt="Creative Commons icon"/>
-          </p>
-        </div>
-      </footer>
-    </div>
+        </section>
+      </div><!-- /#be-a-contestant -->
+
+    </div><!-- /[role=main] -->
+
+    <footer role="contentinfo">>
+      <div itemscope itemtype="http://data-vocabulary.org/Organization" class="info">
+        <h2 itemprop="name">The Knucklelodeon Network</h2>
+        <p>
+          The Knucklelodeon Network is not affiliated with Nickelodeon, nor is
+          it an actual television network
+        </p>
+        <p>
+          Triple Dare contestents consent to potential physical bodily harm,
+          like being burried alive by a giant waffle.
+        </p>
+        <h2>Visit Our Studios</h2>
+        <p itemprop="address">
+          11 Slime Time Way
+          Sacrameno, CA 94203
+        </p>
+        <p itemprop="address">
+          329 Gunk Road
+          Jacksonville, FL 32099
+        </p>
+      </div>
+      <div class="meta">
+        <p>
+          This design is licensed under a Creative Commons
+          Attribution-NonCommercial-NoDerivs 3.0 License
+        </p>
+        <p class="cc-icon">
+          <img src="images/cc-icon.png" alt="Creative Commons icon"/>
+        </p>
+      </div>
+    </footer>
+
     <script src="vendor/jquery-1.6.4.min.js"></script>
     <!--[if lte IE 8]>
       <script src="vendor/selectivizr.js"></script>

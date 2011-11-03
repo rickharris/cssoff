@@ -141,9 +141,16 @@ html
 /* 6. Signup
  *    ------ */
 #be-a-contestant
-  @extend .container
+  @extend .section
+  border-bottom: 0
+  .no-rgba &
+    border-color: darken(color-palette(blue), 6%)
+  section
+    @extend .container
   form
     margin-bottom: $base-line-height
+  .photo
+    clear: both
 
 .the-clock
   text-align: center
@@ -165,12 +172,6 @@ html
 
 /* 7. Footer
  *    ------ */
-.footer-wrapper
-  @extend .section
-  border-bottom: 0
-  .no-rgba &
-    border-color: darken(color-palette(blue), 6%)
-
 footer
   @extend .container
   @extend .opensans
@@ -194,8 +195,10 @@ footer
     left: 50%
     margin-left: -67px
   h2
+    clear: both
     +adjust-font-size-to(20px)
-    margin: ($base-line-height * 1.5) 0 ($base-line-height / 2)
+    margin-bottom: ($base-line-height / 2)
+    padding-top: ($base-line-height * 1.5)
     text-shadow: none
   p
     line-height: 18px

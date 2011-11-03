@@ -186,14 +186,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 /* The ever-great float-containing class */
-.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer, .row, #obstacles, .info {
+.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant section, footer, .row, #obstacles, .info {
   *zoom: 1;
 }
-.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant:before, footer:before, .row:before, #obstacles:before, .info:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after, .info:after {
+.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant section:before, footer:before, .row:before, #obstacles:before, .info:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant section:after, footer:after, .row:after, #obstacles:after, .info:after {
   content: "";
   display: table;
 }
-.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after, .info:after {
+.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant section:after, footer:after, .row:after, #obstacles:after, .info:after {
   clear: both;
 }
 
@@ -379,7 +379,7 @@ h3 {
  *    ------------- */
 /* 2. Container
  *    --------- */
-.container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer {
+.container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant section, footer {
   margin: 0 5%;
 }
 
@@ -624,7 +624,7 @@ button:active {
   max-height: 200px;
 }
 
-.section, #obstacles, #prizes, .footer-wrapper {
+.section, #obstacles, #prizes, #be-a-contestant {
   border-width: 7px 0;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.06);
@@ -742,8 +742,17 @@ html {
 
 /* 6. Signup
  *    ------ */
+#be-a-contestant {
+  border-bottom: 0;
+}
+.no-rgba #be-a-contestant {
+  border-color: #69b6cf;
+}
 #be-a-contestant form {
   margin-bottom: 24px;
+}
+#be-a-contestant .photo {
+  clear: both;
 }
 
 .the-clock {
@@ -767,13 +776,6 @@ html {
 
 /* 7. Footer
  *    ------ */
-.footer-wrapper {
-  border-bottom: 0;
-}
-.no-rgba .footer-wrapper {
-  border-color: #69b6cf;
-}
-
 footer {
   text-align: center;
 }
@@ -797,9 +799,11 @@ footer {
   margin-left: -67px;
 }
 .info h2 {
+  clear: both;
   font-size: 1.429em;
   line-height: 1.2em;
-  margin: 36px 0 12px;
+  margin-bottom: 12px;
+  padding-top: 36px;
   text-shadow: none;
 }
 .info p {
@@ -830,12 +834,12 @@ footer {
     padding-left: 20px;
   }
 
-  .checkered, .section section h2, #obstacles section h2, #prizes section h2, .footer-wrapper section h2 {
+  .checkered, .section section h2, #obstacles section h2, #prizes section h2, #be-a-contestant section h2 {
     float: left;
     padding-right: 23px;
     position: relative;
   }
-  .checkered:after, .section section h2:after, #obstacles section h2:after, #prizes section h2:after, .footer-wrapper section h2:after {
+  .checkered:after, .section section h2:after, #obstacles section h2:after, #prizes section h2:after, #be-a-contestant section h2:after {
     content: "";
     width: 940px;
     height: 100%;
@@ -844,18 +848,18 @@ footer {
     top: 0;
     left: 100%;
   }
-  .checkered + *, .section section h2 + *, #obstacles section h2 + *, #prizes section h2 + *, .footer-wrapper section h2 + * {
+  .checkered + *, .section section h2 + *, #obstacles section h2 + *, #prizes section h2 + *, #be-a-contestant section h2 + * {
     clear: left;
   }
 
-  .section, #obstacles, #prizes, .footer-wrapper {
+  .section, #obstacles, #prizes, #be-a-contestant {
     padding-top: 36px;
     padding-bottom: 36px;
   }
-  .section section, #obstacles section, #prizes section, .footer-wrapper section {
+  .section section, #obstacles section, #prizes section, #be-a-contestant section {
     overflow: hidden;
   }
-  .section section h2, #obstacles section h2, #prizes section h2, .footer-wrapper section h2 {
+  .section section h2, #obstacles section h2, #prizes section h2, #be-a-contestant section h2 {
     margin-bottom: 36px;
   }
 
@@ -1053,7 +1057,7 @@ footer {
   /* 5. Signup
    *    ------ */
   #be-a-contestant {
-    margin-bottom: 72px;
+    margin-bottom: 24px;
   }
   #be-a-contestant form {
     margin-bottom: 60px;
@@ -1064,9 +1068,6 @@ footer {
   }
   #be-a-contestant .gender {
     width: 33.323%;
-  }
-  #be-a-contestant .photo {
-    clear: both;
   }
   #be-a-contestant .form-submit {
     margin-top: 36px;
@@ -1088,9 +1089,6 @@ footer {
     /* second paragraph is right column, left-aligned, but we have to add a
      * negative margin because the two floats don't fit on the same line
      * with the 50% side-margins */
-  }
-  .info h2 {
-    clear: both;
   }
   .info p {
     width: 300px;
@@ -1133,7 +1131,7 @@ footer {
 .lt-ie8 button {
   padding: 50px 0;
 }
-.lt-ie8 .container, .lt-ie8 .page-header-inner, .lt-ie8 #obstacles section, #obstacles .lt-ie8 section, .lt-ie8 #prizes section, #prizes .lt-ie8 section, .lt-ie8 #be-a-contestant, .lt-ie8 footer {
+.lt-ie8 .container, .lt-ie8 .page-header-inner, .lt-ie8 #obstacles section, #obstacles .lt-ie8 section, .lt-ie8 #prizes section, #prizes .lt-ie8 section, .lt-ie8 #be-a-contestant section, #be-a-contestant .lt-ie8 section, .lt-ie8 footer {
   max-width: 600px;
   margin: 0 auto;
 }

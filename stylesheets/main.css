@@ -1,3 +1,6 @@
+/* START 3rd-party libraries
+ * =========================
+ * Imported via Sass for easy extending - this is not original code */
 /*
 Animate.css - http://daneden.me/animate
 LICENSED UNDER THE  MIT LICENSE (MIT)
@@ -241,6 +244,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-name: fadeOutUp;
 }
 
+/* END 3rd-party libraries
+ * =======================
+ */
+/* START Custom CSS
+ * =============== */
 /* orignal file - sass/lib/_global.sass
  *
  * # Table of Contents
@@ -276,11 +284,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   clear: both;
 }
 
-/* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
 .sprite-sprite, .sprite-arrow, .selector span:after, .sprite-down-the-hatch, #obstacles nav .down-the-hatch:before, .sprite-human-hamster-wheel, #obstacles nav .human-hamster-wheel:before, .sprite-knucklelodeon-logo, .info:before, .sprite-pick-it, #obstacles nav .pick-it:before, .sprite-slime-small, .sprite-slime, #obstacles .obstacle .copy:after, .sprite-sundae-slide, #obstacles nav .sundae-slide:before, .sprite-the-tank, #obstacles nav .the-tank:before, .sprite-the-wringer, #obstacles nav .the-wringer:before, .sprite-timer, .the-clock .clock {
-  background: url('../images/sprite-sc8a977c49d.png') no-repeat;
+  background: url('../images/sprite-s68b642fa7d.png') no-repeat;
 }
 
 .sprite-arrow, .selector span:after {
@@ -499,7 +506,7 @@ label {
 input[type=text], .selector, input[type=email], input[type=url] {
   outline: 0;
   border: 0;
-  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -575,7 +582,7 @@ select {
   top: 0;
   width: 50px;
   height: 50px;
-  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -619,7 +626,7 @@ select {
 /* 4. Buttons
  *    ------- */
 .form-submit {
-  background: url('../images/slime-button-bg.png?1319398760') no-repeat 50% 50%;
+  background: url('../images/slime-button-bg.png?1320345519') no-repeat 50% 50%;
   text-align: center;
 }
 
@@ -684,7 +691,7 @@ button:active {
   position: relative;
 }
 .no-rgba .box, .no-rgba #obstacles .obstacle, #obstacles .no-rgba .obstacle, .no-rgba #prizes li, #prizes .no-rgba li {
-  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
   background-color: #fe4f1a;
 }
 .box h3, #obstacles .obstacle h3, #prizes li h3 {
@@ -713,7 +720,7 @@ button:active {
 /* 2. Global layout definitions
  *    ------------------------- */
 html {
-  background: #80c1d6 url('../images/patterns/blue.png?1319166896') repeat 0 0;
+  background: #80c1d6 url('../images/patterns/blue.png?1320345475') repeat 0 0;
 }
 
 ::-moz-selection {
@@ -777,18 +784,18 @@ html {
   color: #e6e6e6;
 }
 .no-rgba .page-header-inner .prizes {
-  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
   background-color: #fe4f1a;
 }
 .no-rgba .page-header-inner .be-a-contestant {
-  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
   background-color: #6f9b31;
 }
 
 /* 4. Obstacles
  *    --------- */
 #obstacles {
-  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background: #fe6638 url('../images/patterns/orange.png?1320345479') repeat 0 0;
 }
 .no-rgba #obstacles {
   border-color: #fe4f1a;
@@ -814,7 +821,7 @@ html {
 /* 5. Prizes
  *    ------ */
 #prizes {
-  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
 }
 .no-rgba #prizes {
   border-color: #6f9b31;
@@ -824,7 +831,7 @@ html {
   padding-left: 0;
 }
 .no-rgba #prizes li {
-  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
   background-color: #6f9b31;
 }
 
@@ -934,7 +941,7 @@ footer {
     content: "";
     width: 940px;
     height: 100%;
-    background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 7px;
+    background: url('../images/patterns/yellow-checker.png?1320345479') repeat-x 0 7px;
     position: absolute;
     top: 0;
     left: 100%;
@@ -965,7 +972,7 @@ footer {
    *    ------ */
   /* Give the header big 'splat' image */
   .page-header {
-    background: url('../images/header-splat.png?1320289210') no-repeat 50% 50%;
+    background: url('../images/header-splat.png?1320345372') no-repeat 50% 50%;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -1015,7 +1022,7 @@ footer {
   #obstacles nav a {
     display: block;
     padding: 16px;
-    background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+    background: #80b238 url('../images/patterns/green.png?1320345477') repeat 0 0;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     -o-border-radius: 4px;
@@ -1038,7 +1045,7 @@ footer {
     background-color: #88be3c;
   }
   #obstacles nav a.active {
-    background: #eef13f url('../images/patterns/yellow.png?1320289210') repeat 0 0;
+    background: #eef13f url('../images/patterns/yellow.png?1320345517') repeat 0 0;
     color: #fe6638;
   }
   #obstacles .content {
@@ -1335,11 +1342,7 @@ footer {
     margin-right: 0;
   }
 }
-.lt-ie8 {
-  /* form fixes */
-  /* grid fixes */
-  /* class fixes */
-}
+/* Legacy fixes */
 .lt-ie8 .form-text label {
   left: 38px;
 }

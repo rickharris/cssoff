@@ -759,7 +759,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  background: #3b97b5;
+  background: #69b6cf;
   background: rgba(0, 0, 0, 0.06);
   text-transform: uppercase;
   font-size: 1em;
@@ -781,15 +781,19 @@ html {
   text-decoration: none;
 }
 .page-header-inner nav a:hover {
-  color: #e6e6e6;
+  color: #f2f2f2;
 }
-.no-rgba .page-header-inner .prizes {
+.no-rgba .page-header-inner .obstacles {
   background: #fe6638 url('../images/patterns/orange.png?1320349279') repeat 0 0;
   background-color: #fe4f1a;
 }
-.no-rgba .page-header-inner .be-a-contestant {
+.no-rgba .page-header-inner .prizes {
   background: #80b238 url('../images/patterns/green.png?1320349279') repeat 0 0;
   background-color: #6f9b31;
+}
+.no-rgba .page-header-inner .be-a-contestant {
+  background: #80c1d6 url('../images/patterns/blue.png?1320349279') repeat 0 0;
+  background-color: #69b6cf;
 }
 
 /* 4. Obstacles
@@ -951,8 +955,8 @@ footer {
   }
 
   .section, #obstacles, #prizes, #be-a-contestant {
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .section section, #obstacles section, #prizes section, #be-a-contestant section {
     overflow: hidden;

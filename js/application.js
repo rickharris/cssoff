@@ -63,11 +63,11 @@
         // up)
         var topOffset = 0;
 
-        // If we're scrolling down, we want the nav to jump to the bottom of the
-        // header
+        // If we're scrolling down, we want the nav to jump to the top of the
+        // obstacle section
         if (dir === 'down') {
           wayPoint = $('#obstacles');
-          topOffset = wayPoint.offset().top - mainNav.height();
+          topOffset = wayPoint.offset().top;
         }
 
         mainNav
@@ -83,7 +83,7 @@
 
         var wayPoint = $(this);
 
-        // If scrolling down, we want the navigation to jump to right above the
+        // If scrolling down, we want the navigation to jump to the top of the
         // next section
         if (dir === 'down') {
           wayPoint = wayPoint.next();
@@ -92,10 +92,10 @@
         var topOffset = wayPoint.offset().top;
 
         mainNav
-          .css('top', topOffset - mainNav.height())
+          .css('top', topOffset)
           .removeClass()
           .addClass(wayPoint.attr('id'));
-      });
+      }, { offset: -mainNav.height() });
 
       // Sanity check for resizing the window
       $(window).resize(function() {
@@ -115,7 +115,7 @@
 
       // Clock countdown
       // ---------------
-      
+
       (function countDown() {
 
         function reset() {

@@ -74,7 +74,7 @@ html
     top: 0
     left: 0
     width: 100%
-    background: darken(color-palette(blue), 20%)
+    background: darken(color-palette(blue), 6%)
     background: rgba(#000, 0.06)
     text-transform: uppercase
     +adjust-font-size-to(14px, 1.333)
@@ -93,15 +93,19 @@ html
       color: color-palette(white)
       text-decoration: none
       &:hover
-        color: darken(#fff, 10%)
-  .prizes
+        color: darken(#fff, 5%)
+  .obstacles
     .no-rgba &
       +background-pattern(orange)
       background-color: darken(color-palette(orange), 6%)
-  .be-a-contestant
+  .prizes
     .no-rgba &
       +background-pattern(green)
       background-color: darken(color-palette(green), 6%)
+  .be-a-contestant
+    .no-rgba &
+      +background-pattern(blue)
+      background-color: darken(color-palette(blue), 6%)
 
 
 /* 4. Obstacles

@@ -774,7 +774,7 @@ html {
   text-decoration: none;
 }
 .page-header-inner nav a:hover {
-  color: #badde9;
+  color: #e6e6e6;
 }
 
 /* 4. Obstacles
@@ -967,6 +967,12 @@ footer {
   .page-header-inner h2 {
     text-shadow: 1px 3px 0 #f2f2f2;
   }
+  .js .page-header-inner nav li:last-child {
+    display: inline;
+  }
+  .page-header-inner nav a:hover {
+    color: #f2f2f2;
+  }
   .page-header-inner p {
     padding: 0;
   }
@@ -1157,7 +1163,8 @@ footer {
   }
   #be-a-contestant .the-clock .clock {
     display: inline-block;
-    margin-right: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
   #be-a-contestant .the-clock .alert {
     color: #fe6638;
@@ -1240,12 +1247,6 @@ footer {
   .no-js .page-header-inner nav {
     position: fixed;
   }
-  .page-header-inner nav li:last-child {
-    display: inline;
-  }
-  .page-header-inner nav a:hover {
-    color: #f2f2f2;
-  }
 
   /* 3. Obstacles
    *    --------- */
@@ -1290,8 +1291,11 @@ footer {
   #obstacles .content {
     width: 49.99%;
   }
+  #obstacles .obstacle {
+    height: 684px;
+  }
   #obstacles .obstacle .copy {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
   }
   #obstacles .obstacle h3 {
     font-size: 40px;

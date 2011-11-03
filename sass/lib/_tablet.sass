@@ -61,6 +61,11 @@
   .page-header-inner
     h2
       text-shadow: 1px 3px 0 #f2f2f2
+    nav
+      .js & li:last-child
+        display: inline
+      a:hover
+        color: darken(#fff, 5%)
     p
       padding: 0
       small
@@ -208,7 +213,8 @@
     .the-clock
       .clock
         display: inline-block
-        margin-right: 50px
+        margin-left: 25px
+        margin-right: 25px
       .alert
         color: color-palette(orange)
         @extend .animated

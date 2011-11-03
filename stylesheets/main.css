@@ -625,7 +625,7 @@ select {
 
 button {
   margin: 0;
-  padding: 0 10px;
+  padding: 50px 10px;
   border: 0;
   outline: 0;
   background: none;
@@ -775,6 +775,14 @@ html {
 }
 .page-header-inner nav a:hover {
   color: #e6e6e6;
+}
+.no-rgba .page-header-inner .prizes {
+  background: #fe6638 url('../images/patterns/orange.png?1319166962') repeat 0 0;
+  background-color: #fe4f1a;
+}
+.no-rgba .page-header-inner .be-a-contestant {
+  background: #80b238 url('../images/patterns/green.png?1319166972') repeat 0 0;
+  background-color: #6f9b31;
 }
 
 /* 4. Obstacles
@@ -970,7 +978,10 @@ footer {
   .js .page-header-inner nav li:last-child {
     display: inline;
   }
-  .page-header-inner nav a:hover {
+  .js .page-header-inner .top li:last-child {
+    display: none;
+  }
+  .page-header-inner .top a:hover {
     color: #f2f2f2;
   }
   .page-header-inner p {
@@ -1337,9 +1348,6 @@ footer {
 }
 .lt-ie8 .selector {
   width: 100%;
-}
-.lt-ie8 button {
-  padding: 50px 0;
 }
 .lt-ie8 .container, .lt-ie8 .page-header-inner, .lt-ie8 #obstacles section, #obstacles .lt-ie8 section, .lt-ie8 #prizes section, #prizes .lt-ie8 section, .lt-ie8 #be-a-contestant section, #be-a-contestant .lt-ie8 section, .lt-ie8 footer {
   max-width: 600px;

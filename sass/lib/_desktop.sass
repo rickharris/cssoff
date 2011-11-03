@@ -1,0 +1,85 @@
+/*
+ * orignal file - sass/lib/_desktop.sass
+ *
+ * # Table of Contents
+ *   1. Patterns
+ *   2. Header
+ *   3. Obstacles
+ *   4. Prizes
+ *   5. Signup
+ *   6. Footer
+ */
+
+
++respond-to(desktops)
+
+  /* 1. Patterns
+   *    -------- */
+  .container
+    max-width: 940px
+    margin: 0 auto
+
+
+  /* 2. Header
+   *    ------ */
+  .page-header-inner
+    padding-bottom: $base-line-height * 3
+    h2
+      +adjust-font-size-to(52px, 2)
+      margin-bottom: $base-line-height
+    nav
+      font-size: 18px
+      .no-js &
+        position: fixed
+      li:last-child
+        display: inline
+      a:hover
+        color: darken(#fff, 5%)
+
+  /* 3. Obstacles
+   *    --------- */
+  #obstacles
+    nav
+      +column-width(6)
+      ul
+        @extend .row
+      li
+        @extend .column
+        +column-width(6)
+      a
+        padding-bottom: 8px
+        &:before
+          display: block
+          margin: 0 auto $base-line-height
+          height: 150px
+      @each $i in the-tank, sundae-slide, human-hamster-wheel, down-the-hatch, pick-it, the-wringer
+        .#{$i}:before
+          content: image-url("sprite/#{$i}.png")
+    .content
+      +column-width(6)
+    .obstacle
+      .copy
+        margin-bottom: $base-line-height * 2
+      h3
+        font-size: 40px
+        line-height: 44px
+        margin-bottom: 8px
+      p
+        font-size: 22px
+      img
+        max-width: 400px
+        max-height: 460px
+
+  /* 4. Signup
+   *    ------ */
+  #be-a-contestant
+    form
+      @extend .column
+      +column-width(6)
+      padding-left: 0
+      padding-right: 80px
+    .the-clock
+      @extend .column
+      +column-width(6)
+      .clock
+        margin-right: 0

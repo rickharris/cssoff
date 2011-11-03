@@ -186,14 +186,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 /* The ever-great float-containing class */
-.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant section, footer, .row, #obstacles, .info {
+.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant section, footer, .row, #obstacles nav ul, #obstacles, #prizes ul, .info {
   *zoom: 1;
 }
-.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant section:before, footer:before, .row:before, #obstacles:before, .info:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant section:after, footer:after, .row:after, #obstacles:after, .info:after {
+.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant section:before, footer:before, .row:before, #obstacles nav ul:before, #obstacles:before, #prizes ul:before, .info:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant section:after, footer:after, .row:after, #obstacles nav ul:after, #obstacles:after, #prizes ul:after, .info:after {
   content: "";
   display: table;
 }
-.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant section:after, footer:after, .row:after, #obstacles:after, .info:after {
+.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant section:after, footer:after, .row:after, #obstacles nav ul:after, #obstacles:after, #prizes ul:after, .info:after {
   clear: both;
 }
 
@@ -385,14 +385,14 @@ h3 {
 
 /* 3. Column row
  *    ---------- */
-.row {
+.row, #obstacles nav ul {
   margin-left: -20px;
 }
 
 /* 4. Column
  *    ------ */
 .column, #obstacles nav,
-#obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .info p {
+#obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .info p, #obstacles nav li, #be-a-contestant form, #be-a-contestant .the-clock {
   float: left;
   width: 100%;
   -moz-box-sizing: border-box;
@@ -669,11 +669,12 @@ html {
 }
 .page-header-inner nav {
   position: absolute;
+  z-index: 8000;
   top: 0;
   left: 0;
   width: 100%;
   background: #3b97b5;
-  background: rgba(15, 40, 48, 0.2);
+  background: rgba(0, 0, 0, 0.06);
   text-transform: uppercase;
   font-size: 1em;
   line-height: 2.285em;
@@ -833,7 +834,7 @@ footer {
   }
 
   .column, #obstacles nav,
-  #obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .info p {
+  #obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .info p, #obstacles nav li, #be-a-contestant form, #be-a-contestant .the-clock {
     padding-left: 20px;
   }
 
@@ -863,7 +864,7 @@ footer {
     overflow: hidden;
   }
   .section section h2, #obstacles section h2, #prizes section h2, #be-a-contestant section h2 {
-    margin-bottom: 36px;
+    margin-bottom: 60px;
   }
 
   .box, #obstacles .obstacle, #prizes li {
@@ -960,7 +961,7 @@ footer {
     display: block;
     position: absolute;
     /* Set all offsets to 0 to stretch to full width/height */
-    left: 0;
+    left: 20px;
     right: 0;
     top: 0;
     bottom: 0;
@@ -1066,11 +1067,11 @@ footer {
     margin-bottom: 60px;
   }
   #be-a-contestant .team-color {
-    width: 66.657%;
+    width: 58.323%;
     padding-left: 0;
   }
   #be-a-contestant .gender {
-    width: 33.323%;
+    width: 41.657%;
   }
   #be-a-contestant .form-submit {
     margin-top: 36px;
@@ -1115,6 +1116,114 @@ footer {
   }
   .info [itemprop=address] + [itemprop=address] {
     margin-top: -48px;
+  }
+}
+/* orignal file - sass/lib/_desktop.sass
+ *
+ * # Table of Contents
+ *   1. Patterns
+ *   2. Header
+ *   3. Obstacles
+ *   4. Prizes
+ *   5. Signup
+ *   6. Footer
+ */
+@media only screen and (min-width: 960px) {
+  /* 1. Patterns
+   *    -------- */
+  .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant section, footer {
+    max-width: 940px;
+    margin: 0 auto;
+  }
+
+  /* 2. Header
+   *    ------ */
+  .page-header-inner {
+    padding-bottom: 72px;
+  }
+  .page-header-inner h2 {
+    font-size: 3.714em;
+    line-height: 0.923em;
+    margin-bottom: 24px;
+  }
+  .page-header-inner nav {
+    font-size: 18px;
+  }
+  .no-js .page-header-inner nav {
+    position: fixed;
+  }
+  .page-header-inner nav li:last-child {
+    display: inline;
+  }
+  .page-header-inner nav a:hover {
+    color: #f2f2f2;
+  }
+
+  /* 3. Obstacles
+   *    --------- */
+  #obstacles nav {
+    width: 49.99%;
+  }
+  #obstacles nav li {
+    width: 49.99%;
+  }
+  #obstacles nav a {
+    padding-bottom: 8px;
+  }
+  #obstacles nav a:before {
+    display: block;
+    margin: 0 auto 24px;
+    height: 150px;
+  }
+  #obstacles nav .the-tank:before {
+    content: url('../images/sprite/the-tank.png?1320289210');
+  }
+  #obstacles nav .sundae-slide:before {
+    content: url('../images/sprite/sundae-slide.png?1320289210');
+  }
+  #obstacles nav .human-hamster-wheel:before {
+    content: url('../images/sprite/human-hamster-wheel.png?1320289210');
+  }
+  #obstacles nav .down-the-hatch:before {
+    content: url('../images/sprite/down-the-hatch.png?1320289210');
+  }
+  #obstacles nav .pick-it:before {
+    content: url('../images/sprite/pick-it.png?1320289210');
+  }
+  #obstacles nav .the-wringer:before {
+    content: url('../images/sprite/the-wringer.png?1320289210');
+  }
+  #obstacles .content {
+    width: 49.99%;
+  }
+  #obstacles .obstacle .copy {
+    margin-bottom: 48px;
+  }
+  #obstacles .obstacle h3 {
+    font-size: 40px;
+    line-height: 44px;
+    margin-bottom: 8px;
+  }
+  #obstacles .obstacle p {
+    font-size: 22px;
+  }
+  #obstacles .obstacle img {
+    max-width: 400px;
+    max-height: 460px;
+  }
+
+  /* 4. Signup
+   *    ------ */
+  #be-a-contestant form {
+    width: 49.99%;
+    padding-left: 0;
+    padding-right: 80px;
+  }
+  #be-a-contestant .the-clock {
+    width: 49.99%;
+  }
+  #be-a-contestant .the-clock .clock {
+    margin-right: 0;
   }
 }
 .lt-ie8 {

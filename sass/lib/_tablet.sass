@@ -43,7 +43,7 @@
       overflow: hidden
       h2
         @extend .checkered
-        margin-bottom: 36px
+        margin-bottom: $base-line-height * 2.5
 
   .box
     background: none
@@ -118,7 +118,7 @@
         display: block
         position: absolute
         /* Set all offsets to 0 to stretch to full width/height */
-        left: 0
+        left: $gutter-width
         right: 0
         top: 0
         bottom: 0
@@ -171,6 +171,8 @@
   /* 4. Prizes
    *    ------ */
   #prizes
+    ul
+      @extend .clearfix
     li
       @extend .column
       +column-width(6)
@@ -195,11 +197,11 @@
       margin-bottom: $base-line-height * 2.5
     .team-color
       @extend .column
-      +column-width(8)
+      +column-width(7)
       padding-left: 0
     .gender
       @extend .column
-      +column-width(4)
+      +column-width(5)
     .form-submit
       margin-top: $base-line-height * 1.5
 

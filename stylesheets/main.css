@@ -392,7 +392,7 @@ h3 {
 /* 4. Column
  *    ------ */
 .column, #obstacles nav,
-#obstacles .content, #prizes li {
+#obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender {
   float: left;
   width: 100%;
   padding-left: 20px;
@@ -742,7 +742,7 @@ html {
   line-height: 330px;
   color: #f5eb00;
   text-shadow: 5px 10px 0 black;
-  margin: 0 -4% 48px;
+  margin: 0 auto 48px;
 }
 .the-clock p {
   font-size: 1.429em;
@@ -1013,5 +1013,36 @@ footer {
   }
   #prizes li img {
     max-height: none;
+  }
+
+  /* 5. Signup
+   *    ------ */
+  #be-a-contestant {
+    margin-bottom: 72px;
+  }
+  #be-a-contestant form {
+    margin-bottom: 60px;
+  }
+  #be-a-contestant .team-color {
+    width: 66.657%;
+    padding-left: 0;
+  }
+  #be-a-contestant .gender {
+    width: 33.323%;
+  }
+  #be-a-contestant .photo {
+    clear: both;
+  }
+  #be-a-contestant .form-submit {
+    margin-top: 36px;
+  }
+  #be-a-contestant .the-clock .clock {
+    display: inline-block;
+    margin-right: 50px;
+  }
+  #be-a-contestant .the-clock p {
+    font-size: 2.857em;
+    line-height: 1.2em;
+    display: inline-block;
   }
 }

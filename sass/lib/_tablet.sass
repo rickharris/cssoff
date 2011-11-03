@@ -172,3 +172,30 @@
       img
         max-height: none
 
+
+  /* 5. Signup
+   *    ------ */
+  #be-a-contestant
+    margin-bottom: $base-line-height * 3
+    form
+      margin-bottom: $base-line-height * 2.5
+    .team-color
+      @extend .column
+      +column-width(8)
+      padding-left: 0
+    .gender
+      @extend .column
+      +column-width(4)
+    .photo
+      clear: both
+    .form-submit
+      margin-top: $base-line-height * 1.5
+
+    .the-clock
+      .clock
+        display: inline-block
+        margin-right: 50px
+      p
+        +adjust-font-size-to(40px)
+        display: inline-block
+

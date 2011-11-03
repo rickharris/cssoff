@@ -4,8 +4,11 @@
 
     var isLegacy = $('html').hasClass('lt-ie8');
     var obstacleWrapper = $('#obstacles');
+    var mainNav = $('.page-header-inner nav');
 
     // Form enhancements
+    // -----------------
+
     if (!isLegacy) {
       $('select').uniform();
       $('label').inFieldLabels({
@@ -15,6 +18,8 @@
     }
 
     // Obstacle show/hide
+    // ------------------
+
     $('#obstacles').find('nav a').click(function(e) {
 
       var obstacleChoice = $(this);
@@ -40,9 +45,45 @@
         obstacleChoice.addClass('active');
 
       }
-
     });
 
+    // Dynamic menu position
+    // ---------------------
+
+    // Trigger the navigation to move whenever we scroll past the bottom of the
+    // navigation
+    $('#top').waypoint(function(e, dir) {
+
+      // Set the nav to jump to the top of the page by default (i.e. scrolling
+      // up)
+      var topOffset = 0;
+
+      // If we're scrolling down, we want the nav to jump to the bottom of the
+      // header
+      if (dir === 'down') {
+        topOffset = $(this).height() - mainNav.height();
+      }
+
+      mainNav.css('top', topOffset);
+
+    }, { offset: -mainNav.height() });
+
+    // Trigger the navigation to move whenever we scroll past the top of the
+    // first two sections
+    $('#obstacles, #prizes').waypoint(function(e, dir) {
+
+      // If scrolling up, we want to set the navigation right above the top of
+      // the section
+      var topOffset = $(this).offset().top;
+
+      // If scrolling down, we want the navigation to jump to right above the
+      // next section
+      if (dir === 'down') {
+        topOffset = $(this).next().offset().top;
+      }
+
+      mainNav.css('top', topOffset - mainNav.height());
+    });
   });
 
 })(jQuery);

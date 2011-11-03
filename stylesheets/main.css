@@ -380,7 +380,7 @@ h3 {
 /* 2. Container
  *    --------- */
 .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer {
-  padding: 0 5%;
+  margin: 0 5%;
 }
 
 /* 3. Column row
@@ -839,7 +839,7 @@ footer {
     content: "";
     width: 940px;
     height: 100%;
-    background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 50%;
+    background: url('../images/patterns/yellow-checker.png?1319169190') repeat-x 0 7px;
     position: absolute;
     top: 0;
     left: 100%;

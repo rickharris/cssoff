@@ -4,7 +4,8 @@
 
     var isLegacy = $('html').hasClass('lt-ie8');
     var obstacleWrapper = $('#obstacles');
-    var mainNav = $('.page-header-inner nav');
+    var mainNav = $('#top nav');
+    var clock = $('#clock');
 
     // Form enhancements
     // -----------------
@@ -84,6 +85,36 @@
 
       mainNav.css('top', topOffset - mainNav.height());
     });
+
+
+    // Clock countdown
+    // ---------------
+    
+    (function countDown() {
+
+      function reset() {
+        clock.removeClass('alert').text('60');
+        setTimeout(decrement, 1000);
+      }
+
+      function decrement() {
+        var seconds = parseInt(clock.text());
+        clock.text(--seconds);
+
+        // If the time is positive, keep countin
+        if (seconds > 0) {
+          countDown();
+        }
+        // If we've reached zero, delay and show the alert state
+        else {
+          clock.addClass('alert');
+          setTimeout(reset, 5000);
+        }
+      }
+
+      setTimeout(decrement, 1000);
+
+    })();
   });
 
 })(jQuery);

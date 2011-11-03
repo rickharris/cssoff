@@ -209,6 +209,11 @@
       .clock
         display: inline-block
         margin-right: 50px
+      .alert
+        color: color-palette(orange)
+        @extend .animated
+        @extend .pulse
+        +experimental(animation-iteration-count, infinite)
       p
         +adjust-font-size-to(40px)
         display: inline-block

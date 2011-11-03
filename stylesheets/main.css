@@ -10,7 +10,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-.animated, .cssanimations #obstacles .obstacle.active, .cssanimations #obstacles .obstacle.hidden {
+.animated, .cssanimations #obstacles .obstacle.active, .cssanimations #obstacles .obstacle.hidden, #be-a-contestant .the-clock .alert {
   -webkit-animation: 1s ease;
   -moz-animation: 1s ease;
   -ms-animation: 1s ease;
@@ -18,12 +18,91 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation: 1s ease;
 }
 
-.animated.hinge, .cssanimations #obstacles .hinge.obstacle.active, .cssanimations #obstacles .hinge.obstacle.hidden {
+.animated.hinge, .cssanimations #obstacles .hinge.obstacle.active, .cssanimations #obstacles .hinge.obstacle.hidden, #be-a-contestant .the-clock .hinge.alert {
   -webkit-animation: 2s ease;
   -moz-animation: 2s ease;
   -ms-animation: 2s ease;
   -o-animation: 2s ease;
   animation: 2s ease;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1);
+  }
+
+  50% {
+    -moz-transform: scale(1.1);
+  }
+
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+
+@-ms-keyframes pulse {
+  0% {
+    -ms-transform: scale(1);
+  }
+
+  50% {
+    -ms-transform: scale(1.1);
+  }
+
+  100% {
+    -ms-transform: scale(1);
+  }
+}
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1);
+  }
+
+  50% {
+    -o-transform: scale(1.1);
+  }
+
+  100% {
+    -o-transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse, #be-a-contestant .the-clock .alert {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -ms-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse;
 }
 
 @-webkit-keyframes fadeInLeft {
@@ -1079,6 +1158,15 @@ footer {
   #be-a-contestant .the-clock .clock {
     display: inline-block;
     margin-right: 50px;
+  }
+  #be-a-contestant .the-clock .alert {
+    color: #fe6638;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -khtml-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
   }
   #be-a-contestant .the-clock p {
     font-size: 2.857em;

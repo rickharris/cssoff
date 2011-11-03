@@ -4,11 +4,10 @@
  * # Table of Contents
  *   1. Patterns
  *   2. Header
- *   3. Content
- *   4. Obstacles
- *   5. Prizes
- *   6. Signup
- *   7. Footer
+ *   3. Obstacles
+ *   4. Prizes
+ *   5. Signup
+ *   6. Footer
  */
 
 
@@ -199,3 +198,33 @@
         +adjust-font-size-to(40px)
         display: inline-block
 
+
+  /* 6. Footer
+   *    ------ */
+  .vcard
+    @extend .clearfix
+    h2
+      clear: both
+    p
+      @extend .column
+      width: 300px
+      margin-bottom: $base-line-height * 1.5
+    /* first paragraph is left column, right-justified */
+    h2 + p
+      text-align: right
+      padding-right: $gutter-width / 2
+      float: right
+      margin-right: 50%
+    /* second paragraph is right column, left-aligned, but we have to add a
+     * negative margin because the two floats don't fit on the same line
+     * with the 50% side-margins */
+    p + p
+      text-align: left
+      padding-left: $gutter-width / 2
+      margin-left: 50%
+      margin-top: -($base-line-height * 1.5) - (18px * 3)
+    .address
+      width: 180px
+      margin-bottom: 12px
+    .address + .address
+      margin-top: -12px - (18px * 2)

@@ -48,13 +48,20 @@
         +column-width(6)
       a
         padding-bottom: 8px
+        padding-top: 180px
+        height: 20px
+        position: relative
         &:before
+          content: ""
           display: block
-          margin: 0 auto $base-line-height
-          height: 150px
+          margin: 0 auto
+          position: absolute
+          top: 12px
+          left: 50%
       @each $i in the-tank, sundae-slide, human-hamster-wheel, down-the-hatch, pick-it, the-wringer
         .#{$i}:before
-          content: image-url("sprite/#{$i}.png")
+          @extend .sprite-#{$i}
+          margin-left: -(image-width(sprite-file(sprite-map("sprite/*.png"), $i)) / 2)
     .content
       +column-width(6)
     .obstacle

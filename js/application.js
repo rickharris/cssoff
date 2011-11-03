@@ -38,7 +38,7 @@
             .filter('.obstacle').addClass('hidden');
 
           // Find the obstacle that this link corresponds to and show it
-          $('#' + obstacleChoice.attr('class'))
+          $('#' + obstacleChoice.data('obstacle'))
             .removeClass('hidden')
             .addClass('active');
 

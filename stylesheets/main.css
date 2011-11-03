@@ -279,7 +279,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 /* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-down-the-hatch, .sprite-human-hamster-wheel, .sprite-knucklelodeon-logo, .info:before, .sprite-pick-it, .sprite-slime-small, .sprite-slime, #obstacles .obstacle .copy:after, .sprite-sundae-slide, .sprite-the-tank, .sprite-the-wringer, .sprite-timer, .the-clock .clock {
+.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-down-the-hatch, #obstacles nav .down-the-hatch:before, .sprite-human-hamster-wheel, #obstacles nav .human-hamster-wheel:before, .sprite-knucklelodeon-logo, .info:before, .sprite-pick-it, #obstacles nav .pick-it:before, .sprite-slime-small, .sprite-slime, #obstacles .obstacle .copy:after, .sprite-sundae-slide, #obstacles nav .sundae-slide:before, .sprite-the-tank, #obstacles nav .the-tank:before, .sprite-the-wringer, #obstacles nav .the-wringer:before, .sprite-timer, .the-clock .clock {
   background: url('../images/sprite-sc8a977c49d.png') no-repeat;
 }
 
@@ -289,13 +289,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 27px;
 }
 
-.sprite-down-the-hatch {
+.sprite-down-the-hatch, #obstacles nav .down-the-hatch:before {
   background-position: 0 -15px;
   height: 161px;
   width: 126px;
 }
 
-.sprite-human-hamster-wheel {
+.sprite-human-hamster-wheel, #obstacles nav .human-hamster-wheel:before {
   background-position: 0 -176px;
   height: 164px;
   width: 166px;
@@ -307,7 +307,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 134px;
 }
 
-.sprite-pick-it {
+.sprite-pick-it, #obstacles nav .pick-it:before {
   background-position: 0 -425px;
   height: 161px;
   width: 163px;
@@ -325,19 +325,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 236px;
 }
 
-.sprite-sundae-slide {
+.sprite-sundae-slide, #obstacles nav .sundae-slide:before {
   background-position: 0 -947px;
   height: 168px;
   width: 118px;
 }
 
-.sprite-the-tank {
+.sprite-the-tank, #obstacles nav .the-tank:before {
   background-position: 0 -1115px;
   height: 152px;
   width: 171px;
 }
 
-.sprite-the-wringer {
+.sprite-the-wringer, #obstacles nav .the-wringer:before {
   background-position: 0 -1267px;
   height: 160px;
   width: 164px;
@@ -1257,29 +1257,35 @@ footer {
   }
   #obstacles nav a {
     padding-bottom: 8px;
+    padding-top: 180px;
+    height: 20px;
+    position: relative;
   }
   #obstacles nav a:before {
+    content: "";
     display: block;
-    margin: 0 auto 24px;
-    height: 150px;
+    margin: 0 auto;
+    position: absolute;
+    top: 12px;
+    left: 50%;
   }
   #obstacles nav .the-tank:before {
-    content: url('../images/sprite/the-tank.png?1320289210');
+    margin-left: -85.5px;
   }
   #obstacles nav .sundae-slide:before {
-    content: url('../images/sprite/sundae-slide.png?1320289210');
+    margin-left: -59px;
   }
   #obstacles nav .human-hamster-wheel:before {
-    content: url('../images/sprite/human-hamster-wheel.png?1320289210');
+    margin-left: -83px;
   }
   #obstacles nav .down-the-hatch:before {
-    content: url('../images/sprite/down-the-hatch.png?1320289210');
+    margin-left: -63px;
   }
   #obstacles nav .pick-it:before {
-    content: url('../images/sprite/pick-it.png?1320289210');
+    margin-left: -81.5px;
   }
   #obstacles nav .the-wringer:before {
-    content: url('../images/sprite/the-wringer.png?1320289210');
+    margin-left: -82px;
   }
   #obstacles .content {
     width: 49.99%;

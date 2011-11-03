@@ -18,7 +18,7 @@ $gutter-width: 20px
  *    --------- */
 .container
   @extend .clearfix
-  margin: 0 5%
+  padding: 0 5%
 
 
 /* 3. Column row
@@ -33,7 +33,6 @@ $gutter-width: 20px
 .column
   float: left
   width: 100% /* Default for mobile, should be overridden inside media query */
-  padding-left: $gutter-width
   +box-sizing(border-box)
 
 // The selector extending the column class can safely override the width, even

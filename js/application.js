@@ -2,11 +2,14 @@
 
   $(document).ready(function() {
 
+    var isLegacy = $('html').hasClass('lt-ie8');
     var obstacleWrapper = $('#obstacles');
 
     // Form enhancements
-    $('select').uniform();
-    $('label').inFieldLabels();
+    if (!isLegacy) {
+      $('select').uniform();
+      $('label').inFieldLabels();
+    }
 
     // Obstacle show/hide
     $('#obstacles').find('nav a').click(function(e) {

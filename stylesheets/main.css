@@ -380,7 +380,7 @@ h3 {
 /* 2. Container
  *    --------- */
 .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer {
-  margin: 0 5%;
+  padding: 0 5%;
 }
 
 /* 3. Column row
@@ -395,7 +395,6 @@ h3 {
 #obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .vcard p {
   float: left;
   width: 100%;
-  padding-left: 20px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -414,9 +413,6 @@ h3 {
 select,
 label {
   display: block;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 /* 2. Text inputs
@@ -436,7 +432,6 @@ input[type=text], .selector, input[type=email], input[type=url] {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  *max-width: 288px;
   height: 50px;
   padding: 0 16px;
 }
@@ -461,6 +456,15 @@ input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=te
 
 /* 3. Select inputs
  *    ------------- */
+select {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fe6638;
+}
+
 .selector {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -469,7 +473,6 @@ input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=te
   *vertical-align: auto;
   position: relative;
   padding: 0;
-  *max-width: 320px;
 }
 .selector {
   *display: inline;
@@ -510,9 +513,6 @@ input[type=text]:focus.no-boxshadow, .selector:focus.no-boxshadow, input[type=te
   right: 11px;
 }
 .selector select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
   margin: 0;
   padding: 0;
   border: 0;
@@ -812,6 +812,11 @@ footer {
     line-height: 1.2em;
   }
 
+  .column, #obstacles nav,
+  #obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .vcard p {
+    padding-left: 20px;
+  }
+
   .checkered, .section section h2, #obstacles section h2, #prizes section h2, .footer-wrapper section h2 {
     float: left;
     padding-right: 23px;
@@ -845,7 +850,7 @@ footer {
    *    ------ */
   /* Give the header big 'splat' image */
   .page-header {
-    background: url('../images/header-splat.png?1320152623') no-repeat 50% 50%;
+    background: url('../images/header-splat.png?1320289210') no-repeat 50% 50%;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -909,7 +914,7 @@ footer {
     background-color: #88be3c;
   }
   #obstacles nav a.active {
-    background: #eef13f url('../images/patterns/yellow.png?1320199366') repeat 0 0;
+    background: #eef13f url('../images/patterns/yellow.png?1320289210') repeat 0 0;
     color: #fe6638;
   }
   #obstacles .content {
@@ -1079,4 +1084,28 @@ footer {
   .vcard .address + .address {
     margin-top: -48px;
   }
+}
+.lt-ie8 {
+  /* form fixes */
+  /* grid fixes */
+  /* class fixes */
+}
+.lt-ie8 .form-text label {
+  left: 38px;
+}
+.lt-ie8 input[type=text], .lt-ie8 .selector, .lt-ie8 input[type=email], .lt-ie8 input[type=url] {
+  width: 94.5%;
+}
+.lt-ie8 .selector {
+  width: 100%;
+}
+.lt-ie8 button {
+  padding: 50px 0;
+}
+.lt-ie8 .container, .lt-ie8 .page-header-inner, .lt-ie8 #obstacles section, #obstacles .lt-ie8 section, .lt-ie8 #prizes section, #prizes .lt-ie8 section, .lt-ie8 #be-a-contestant, .lt-ie8 footer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.lt-ie8 .box h3, .lt-ie8 #obstacles .obstacle h3, #obstacles .lt-ie8 .obstacle h3, .lt-ie8 #prizes li h3, #prizes .lt-ie8 li h3 {
+  bottom: 16px;
 }

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
     <title>Triple Dare - The Web's Messiest Challenge</title>
@@ -30,6 +34,25 @@
 
     <!-- Modernizr -->
     <script src="vendor/modernizr-custom.min.js"></script>
+
+    <!--
+      And since our fluid grid layout relies on CSS's box-sizing: border-box
+      to size the columns, we're just going to serve IE7 the mobile version
+      of the site. So here we're going to load the media query polyfill only
+      for good versions of IE or other browsers that happen to not support
+      media queries.
+    -->
+    <script>
+      (function() {
+        var isOldIE = document.documentElement.className.indexOf('lt-ie8') >= 0;
+        var hasMqSupport = Modernizr.mq('(min-width:0)');
+
+        Modernizr.load({
+          test: !isOldIE && !hasMqSupport,
+          yep: 'vendor/respond.min.js'
+        });
+      })();
+    </script>
   </head>
   <body>
     <header class="page-header">

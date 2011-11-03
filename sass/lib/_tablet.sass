@@ -216,7 +216,7 @@
 
   /* 6. Footer
    *    ------ */
-  .vcard
+  .info
     @extend .clearfix
     h2
       clear: both
@@ -238,8 +238,8 @@
       padding-left: $gutter-width / 2
       margin-left: 50%
       margin-top: -($base-line-height * 1.5) - (18px * 3)
-    .address
+    [itemprop=address]
       width: 180px
       margin-bottom: 12px
-    .address + .address
+    [itemprop=address] + [itemprop=address]
       margin-top: -12px - (18px * 2)

@@ -186,21 +186,21 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 /* The ever-great float-containing class */
-.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer, .row, #obstacles, .vcard {
+.clearfix, .container, .page-header-inner, #obstacles section, #prizes section, #be-a-contestant, footer, .row, #obstacles, .info {
   *zoom: 1;
 }
-.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant:before, footer:before, .row:before, #obstacles:before, .vcard:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after, .vcard:after {
+.clearfix:before, .container:before, .page-header-inner:before, #obstacles section:before, #prizes section:before, #be-a-contestant:before, footer:before, .row:before, #obstacles:before, .info:before, .clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after, .info:after {
   content: "";
   display: table;
 }
-.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after, .vcard:after {
+.clearfix:after, .container:after, .page-header-inner:after, #obstacles section:after, #prizes section:after, #be-a-contestant:after, footer:after, .row:after, #obstacles:after, .info:after {
   clear: both;
 }
 
 /* Easy media query mixin */
 /* 3. Sprites
  *    ------- */
-.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-down-the-hatch, .sprite-human-hamster-wheel, .sprite-knucklelodeon-logo, .vcard:before, .sprite-pick-it, .sprite-slime-small, .sprite-slime, #obstacles .obstacle .copy:after, .sprite-sundae-slide, .sprite-the-tank, .sprite-the-wringer, .sprite-timer, .the-clock .clock {
+.sprite-sprite, .sprite-arrow, .selector span:after, .sprite-down-the-hatch, .sprite-human-hamster-wheel, .sprite-knucklelodeon-logo, .info:before, .sprite-pick-it, .sprite-slime-small, .sprite-slime, #obstacles .obstacle .copy:after, .sprite-sundae-slide, .sprite-the-tank, .sprite-the-wringer, .sprite-timer, .the-clock .clock {
   background: url('../images/sprite-sc8a977c49d.png') no-repeat;
 }
 
@@ -222,7 +222,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 166px;
 }
 
-.sprite-knucklelodeon-logo, .vcard:before {
+.sprite-knucklelodeon-logo, .info:before {
   background-position: 0 -340px;
   height: 85px;
   width: 134px;
@@ -392,7 +392,7 @@ h3 {
 /* 4. Column
  *    ------ */
 .column, #obstacles nav,
-#obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .vcard p {
+#obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .info p {
   float: left;
   width: 100%;
   -moz-box-sizing: border-box;
@@ -778,7 +778,7 @@ footer {
   text-align: center;
 }
 
-.vcard {
+.info {
   border-width: 7px 0 7px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.06);
@@ -786,23 +786,23 @@ footer {
   margin-bottom: 24px;
   position: relative;
 }
-.no-rgba .vcard {
+.no-rgba .info {
   border-color: #69b6cf;
 }
-.vcard:before {
+.info:before {
   content: "";
   position: absolute;
   top: -48px;
   left: 50%;
   margin-left: -67px;
 }
-.vcard h2 {
+.info h2 {
   font-size: 1.429em;
   line-height: 1.2em;
   margin: 36px 0 12px;
   text-shadow: none;
 }
-.vcard p {
+.info p {
   line-height: 18px;
   margin-bottom: 12px;
 }
@@ -826,7 +826,7 @@ footer {
   }
 
   .column, #obstacles nav,
-  #obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .vcard p {
+  #obstacles .content, #prizes li, #be-a-contestant .team-color, #be-a-contestant .gender, .info p {
     padding-left: 20px;
   }
 
@@ -1083,36 +1083,36 @@ footer {
 
   /* 6. Footer
    *    ------ */
-  .vcard {
+  .info {
     /* first paragraph is left column, right-justified */
     /* second paragraph is right column, left-aligned, but we have to add a
      * negative margin because the two floats don't fit on the same line
      * with the 50% side-margins */
   }
-  .vcard h2 {
+  .info h2 {
     clear: both;
   }
-  .vcard p {
+  .info p {
     width: 300px;
     margin-bottom: 36px;
   }
-  .vcard h2 + p {
+  .info h2 + p {
     text-align: right;
     padding-right: 10px;
     float: right;
     margin-right: 50%;
   }
-  .vcard p + p {
+  .info p + p {
     text-align: left;
     padding-left: 10px;
     margin-left: 50%;
     margin-top: -90px;
   }
-  .vcard .address {
+  .info [itemprop=address] {
     width: 180px;
     margin-bottom: 12px;
   }
-  .vcard .address + .address {
+  .info [itemprop=address] + [itemprop=address] {
     margin-top: -48px;
   }
 }

@@ -1339,7 +1339,8 @@ footer {
     width: 49.99%;
   }
   #be-a-contestant .the-clock .clock {
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 /* Legacy fixes */

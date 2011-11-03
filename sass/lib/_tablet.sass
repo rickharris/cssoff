@@ -45,6 +45,11 @@
         @extend .checkered
         margin-bottom: 36px
 
+  .box
+    background: none
+    .no-rgba &
+      background: none
+
 
   /* 2. Header
    *    ------ */
@@ -104,26 +109,30 @@
       position: relative
 
     .obstacle
-      position: absolute
-      /* Set all offsets to 0 to stretch to full width/height */
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-      opacity: 0
-      +transform(translateZ(0)) /* Fixes weird font transition during animation in webkit */
-      /* Override default styles from mobile */
-      background: none
-      padding: 0
+      position: relative
+      display: none
       &.active
-        @extend .animated
-        @extend .fadeInLeft
-        +experimental(animation-duration, 0.6s)
-        opacity: 1
-      &.hidden
-        @extend .animated
-        @extend .fadeOutUp
-        +experimental(animation-duration, 0.6s)
+        display: block
+      .cssanimations &
+        display: block
+        position: absolute
+        /* Set all offsets to 0 to stretch to full width/height */
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        opacity: 0
+        +transform(translateZ(0)) /* Fixes weird font transition during animation in webkit */
+        padding: 0
+        &.active
+          @extend .animated
+          @extend .fadeInLeft
+          +experimental(animation-duration, 0.6s)
+          opacity: 1
+        &.hidden
+          @extend .animated
+          @extend .fadeOutUp
+          +experimental(animation-duration, 0.6s)
       .copy
         position: relative
         padding: 55px 0
@@ -145,6 +154,8 @@
         position: relative
         z-index: 2
         text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2)
+        .no-csstransforms &
+          font-style: normal
       h3
         +adjust-font-size-to(30px)
         margin-bottom: 0
@@ -162,10 +173,9 @@
       @extend .column
       +column-width(6)
       padding: $gutter-width * 2
-      background: none
       &:first-child
         margin-bottom: 100px - ($gutter-width * 2)
-      &:nth-child(odd)
+      &:nth-child(3)
         clear: left
       &:last-child
         margin-top: -201px

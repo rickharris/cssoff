@@ -10,7 +10,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-.animated, #obstacles .obstacle.active, #obstacles .obstacle.hidden {
+.animated, .cssanimations #obstacles .obstacle.active, .cssanimations #obstacles .obstacle.hidden {
   -webkit-animation: 1s ease;
   -moz-animation: 1s ease;
   -ms-animation: 1s ease;
@@ -18,7 +18,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation: 1s ease;
 }
 
-.animated.hinge, #obstacles .hinge.obstacle.active, #obstacles .hinge.obstacle.hidden {
+.animated.hinge, .cssanimations #obstacles .hinge.obstacle.active, .cssanimations #obstacles .hinge.obstacle.hidden {
   -webkit-animation: 2s ease;
   -moz-animation: 2s ease;
   -ms-animation: 2s ease;
@@ -86,7 +86,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
-.fadeInLeft, #obstacles .obstacle.active {
+.fadeInLeft, .cssanimations #obstacles .obstacle.active {
   -webkit-animation-name: fadeInLeft;
   -moz-animation-name: fadeInLeft;
   -ms-animation-name: fadeInLeft;
@@ -154,7 +154,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
-.fadeOutUp, #obstacles .obstacle.hidden {
+.fadeOutUp, .cssanimations #obstacles .obstacle.hidden {
   -webkit-animation-name: fadeOutUp;
   -moz-animation-name: fadeOutUp;
   -ms-animation-name: fadeOutUp;
@@ -472,6 +472,7 @@ select {
   vertical-align: middle;
   *vertical-align: auto;
   position: relative;
+  z-index: 1;
   padding: 0;
 }
 .selector {
@@ -486,7 +487,6 @@ select {
 .selector:after {
   content: "";
   position: absolute;
-  z-index: 1;
   right: 0;
   top: 0;
   width: 50px;
@@ -503,12 +503,13 @@ select {
   display: block;
   padding: 13px 16px;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 .selector span:after {
   content: "";
   display: block;
   position: absolute;
-  z-index: 2;
   top: 18px;
   right: 11px;
 }
@@ -846,6 +847,13 @@ footer {
     margin-bottom: 36px;
   }
 
+  .box, #obstacles .obstacle, #prizes li {
+    background: none;
+  }
+  .no-rgba .box, .no-rgba #obstacles .obstacle, #obstacles .no-rgba .obstacle, .no-rgba #prizes li, #prizes .no-rgba li {
+    background: none;
+  }
+
   /* 2. Header
    *    ------ */
   /* Give the header big 'splat' image */
@@ -922,6 +930,14 @@ footer {
     position: relative;
   }
   #obstacles .obstacle {
+    position: relative;
+    display: none;
+  }
+  #obstacles .obstacle.active {
+    display: block;
+  }
+  .cssanimations #obstacles .obstacle {
+    display: block;
     position: absolute;
     /* Set all offsets to 0 to stretch to full width/height */
     left: 0;
@@ -934,11 +950,9 @@ footer {
     -o-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    /* Override default styles from mobile */
-    background: none;
     padding: 0;
   }
-  #obstacles .obstacle.active {
+  .cssanimations #obstacles .obstacle.active {
     -moz-animation-duration: 0.6s;
     -webkit-animation-duration: 0.6s;
     -o-animation-duration: 0.6s;
@@ -947,7 +961,7 @@ footer {
     animation-duration: 0.6s;
     opacity: 1;
   }
-  #obstacles .obstacle.hidden {
+  .cssanimations #obstacles .obstacle.hidden {
     -moz-animation-duration: 0.6s;
     -webkit-animation-duration: 0.6s;
     -o-animation-duration: 0.6s;
@@ -982,6 +996,10 @@ footer {
     z-index: 2;
     text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
   }
+  .no-csstransforms #obstacles .obstacle h3, .no-csstransforms
+  #obstacles .obstacle p {
+    font-style: normal;
+  }
   #obstacles .obstacle h3 {
     font-size: 2.143em;
     line-height: 1.6em;
@@ -1001,12 +1019,11 @@ footer {
   #prizes li {
     width: 49.99%;
     padding: 40px;
-    background: none;
   }
   #prizes li:first-child {
     margin-bottom: 60px;
   }
-  #prizes li:nth-child(odd) {
+  #prizes li:nth-child(3) {
     clear: left;
   }
   #prizes li:last-child {

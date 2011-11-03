@@ -54,13 +54,13 @@ select
   @extend input[type=text]
   +inline-block
   position: relative
+  z-index: 1
   padding: 0
   &.focus
     +box-shadow(0 0 6px lighten(color-palette(blue), 20%))
   &:after
     content: ""
     position: absolute
-    z-index: 1
     right: 0
     top: 0
     width: 50px
@@ -71,12 +71,13 @@ select
     display: block
     padding: ((50px - $base-line-height) / 2) 16px
     cursor: pointer
+    position: relative
+    z-index: 2
     &:after
       content: ""
       display: block
       @extend .sprite-arrow
       position: absolute
-      z-index: 2
       top: 18px
       right: 11px
   select

@@ -18,6 +18,7 @@
         fadeDuration: 200
       });
 
+
       // Obstacle show/hide
       // ------------------
 
@@ -48,12 +49,15 @@
         }
       });
 
+
       // Dynamic menu position
       // ---------------------
 
       // Trigger the navigation to move whenever we scroll past the bottom of the
       // navigation
       $('#top').waypoint(function(e, dir) {
+
+        var wayPoint = $(this);
 
         // Set the nav to jump to the top of the page by default (i.e. scrolling
         // up)
@@ -62,10 +66,14 @@
         // If we're scrolling down, we want the nav to jump to the bottom of the
         // header
         if (dir === 'down') {
-          topOffset = $(this).height() - mainNav.height();
+          wayPoint = $('#obstacles');
+          topOffset = wayPoint.offset().top - mainNav.height();
         }
 
-        mainNav.css('top', topOffset);
+        mainNav
+          .css('top', topOffset)
+          .removeClass()
+          .addClass(wayPoint.attr('id'));
 
       }, { offset: -mainNav.height() });
 
@@ -73,17 +81,35 @@
       // first two sections
       $('#obstacles, #prizes').waypoint(function(e, dir) {
 
-        // If scrolling up, we want to set the navigation right above the top of
-        // the section
-        var topOffset = $(this).offset().top;
+        var wayPoint = $(this);
 
         // If scrolling down, we want the navigation to jump to right above the
         // next section
         if (dir === 'down') {
-          topOffset = $(this).next().offset().top;
+          wayPoint = wayPoint.next();
         }
 
-        mainNav.css('top', topOffset - mainNav.height());
+        var topOffset = wayPoint.offset().top;
+
+        mainNav
+          .css('top', topOffset - mainNav.height())
+          .removeClass()
+          .addClass(wayPoint.attr('id'));
+      });
+
+      // Sanity check for resizing the window
+      $(window).resize(function() {
+        // the adjustment of the navigation position. It should be 0 for the
+        // very top position and the negative height of the navigation for
+        // others
+        var offset = 0;
+        // The element to which the navigation is currently anchored
+        var anchor = mainNav.attr('class');
+
+        if (anchor !== 'top') {
+          offset = -mainNav.height();
+        }
+        mainNav.css('top', $('#' + anchor).offset().top + offset);
       });
 
 

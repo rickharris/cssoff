@@ -931,6 +931,7 @@ footer {
   }
   #obstacles .obstacle {
     position: relative;
+    z-index: 1;
     display: none;
   }
   #obstacles .obstacle.active {
@@ -960,6 +961,7 @@ footer {
     -khtml-animation-duration: 0.6s;
     animation-duration: 0.6s;
     opacity: 1;
+    z-index: 2;
   }
   .cssanimations #obstacles .obstacle.hidden {
     -moz-animation-duration: 0.6s;

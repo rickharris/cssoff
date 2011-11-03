@@ -791,6 +791,9 @@ footer {
 .no-rgba .info {
   border-color: #69b6cf;
 }
+.no-generatedcontent .info {
+  padding: 0 0 36px;
+}
 .info:before {
   content: "";
   position: absolute;
